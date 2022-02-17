@@ -20,7 +20,7 @@ ME 405 Lab as a base for motors and links to be mounted on.
 In order to actuate the driven links, we will use ??? motors with
 encoders to faciliate closed loop position control. The pen's machining
 operation will be turned 'on'/'off' using a solenoid. The connections
-between links and the drawing platform will use ?bushings? to allow
+between links and the drawing platform will use ?bearings? to allow
 for low friction rotation.
 
 ## Preliminary Bill of Materials
@@ -35,6 +35,7 @@ machine. Minor components such as hardware and wires are not included.
 |  1   | Aluminum Draw Plate      | ME405 Scrap Bin       |     -     |
 |  1   | 2'x 2' MDF Base Plate    | Home Depot            |  $14.73   |
 |  1   | Black Ultra Fine Sharpie | Staples (5-pack)      |   $5.79   |
+|  6   | Smooth Bearings          | Bearing.com           |  $15.00   |
 
 ## Preliminary CAD
 Below, we have included rough 2D and 3D models showing the proposed
