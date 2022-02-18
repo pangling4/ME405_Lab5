@@ -43,6 +43,7 @@ Below, we have included rough 2D and 3D models showing the proposed
 arrangement of our machine.
 ![3-RRR Planar Parallel Robot Top View!](3R_top_cad.JPG)
 ![3-RRR Planar Parallel Robot Isometric View!](3R_iso_2.JPG)
+![3-RRR Planar Parallel Robot Isometric View 2!](3R_iso.JPG)
 There are three motors at the joints of the a-links. The solenoid is sitting 
 atop the black pin. There are not currently mounts designed for these, but 
 they will be updated soon. 
