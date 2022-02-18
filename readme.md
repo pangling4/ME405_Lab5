@@ -27,15 +27,17 @@ for low friction rotation.
 The following table shows the preliminary bill of materials for our
 machine. Minor components such as hardware and wires are not included.
 
-| Qty. | Part                     | Source                | Est. Cost |
-|:----:|:-------------------------|:----------------------|:---------:|
-|  3   | Pittperson Gearmotors    | ME405 Tub             |     -     |
-|  1   | Nucleo with Shoe         | ME405 Tub             |     -     |
-|  6   | Aluminum Link            | ME405 Scrap Bin       |     -     |
-|  1   | Aluminum Draw Plate      | ME405 Scrap Bin       |     -     |
-|  1   | 2'x 2' MDF Base Plate    | Home Depot            |  $14.73   |
-|  1   | Black Ultra Fine Sharpie | Staples (5-pack)      |   $5.79   |
-|  6   | Smooth Bearings          | Bearing.com           |  $15.00   |
+| Qty. | Part                                | Source                | Est. Cost |
+|:----:|:------------------------------------|:----------------------|:---------:|
+|  3   | Pittperson Gearmotors               | ME405 Tub             |     -     |
+|  1   | Nucleo with Shoe                    | ME405 Tub             |     -     |
+|  6   | Aluminum Link                       | ME405 Scrap Bin       |     -     |
+|  1   | Aluminum Draw Plate                 | ME405 Scrap Bin       |     -     |
+|  1   | 2'x 2' MDF Base Plate               | Home Depot            |  $14.73   |
+|  1   | Black Ultra Fine Sharpie            | Staples (5-pack)      |   $5.79   |
+|  6   | 1/4" Ball bearings                  | McMaster              |  $15.00   |
+|  3   | 12V Motor w/Encoder, 131 Gear Ratio | Dfrobot.com           |  $29.00   |
+|  1   | 3 VDC Open Frame Pull Solenoid      | Jameco                |   $4.95   |
 
 ## Preliminary CAD
 Below, we have included rough 2D and 3D models showing the proposed
