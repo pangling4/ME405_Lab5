@@ -29,7 +29,6 @@ machine. Minor components such as hardware and wires are not included.
 
 | Qty. | Part                                | Source                | Est. Cost |
 |:----:|:------------------------------------|:----------------------|:---------:|
-|  3   | Pittperson Gearmotors               | ME405 Tub             |     -     |
 |  1   | Nucleo with Shoe                    | ME405 Tub             |     -     |
 |  6   | Aluminum Link                       | ME405 Scrap Bin       |     -     |
 |  1   | Aluminum Draw Plate                 | ME405 Scrap Bin       |     -     |
