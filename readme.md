@@ -17,10 +17,10 @@ for the angles necessary to move the base platform to the desired
 location. Our plan is to use scrap metal from the ME 405 Lab for all
 the links as well as the baseplate. We will also use scrap MDF from the
 ME 405 Lab as a base for motors and links to be mounted on.
-In order to actuate the driven links, we will use ??? motors with
+In order to actuate the driven links, we will use DC gear motors with
 encoders to faciliate closed loop position control. The pen's machining
 operation will be turned 'on'/'off' using a solenoid. The connections
-between links and the drawing platform will use ?bearings? to allow
+between links and the drawing platform will use ball bearings to allow
 for low friction rotation.
 
 ## Preliminary Bill of Materials
