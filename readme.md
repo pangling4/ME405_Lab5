@@ -17,25 +17,26 @@ for the angles necessary to move the base platform to the desired
 location. Our plan is to use scrap metal from the ME 405 Lab for all
 the links as well as the baseplate. We will also use scrap MDF from the
 ME 405 Lab as a base for motors and links to be mounted on.
-In order to actuate the driven links, we will use ??? motors with
+In order to actuate the driven links, we will use DC gear motors with
 encoders to faciliate closed loop position control. The pen's machining
 operation will be turned 'on'/'off' using a solenoid. The connections
-between links and the drawing platform will use ?bearings? to allow
+between links and the drawing platform will use ball bearings to allow
 for low friction rotation.
 
 ## Preliminary Bill of Materials
 The following table shows the preliminary bill of materials for our
 machine. Minor components such as hardware and wires are not included.
 
-| Qty. | Part                     | Source                | Est. Cost |
-|:----:|:-------------------------|:----------------------|:---------:|
-|  3   | Pittperson Gearmotors    | ME405 Tub             |     -     |
-|  1   | Nucleo with Shoe         | ME405 Tub             |     -     |
-|  6   | Aluminum Link            | ME405 Scrap Bin       |     -     |
-|  1   | Aluminum Draw Plate      | ME405 Scrap Bin       |     -     |
-|  1   | 2'x 2' MDF Base Plate    | Home Depot            |  $14.73   |
-|  1   | Black Ultra Fine Sharpie | Staples (5-pack)      |   $5.79   |
-|  6   | Smooth Bearings          | Bearing.com           |  $15.00   |
+| Qty. | Part                                | Source                | Est. Cost |
+|:----:|:------------------------------------|:----------------------|:---------:|
+|  1   | Nucleo with Shoe                    | ME405 Tub             |     -     |
+|  6   | Aluminum Link                       | ME405 Scrap Bin       |     -     |
+|  1   | Aluminum Draw Plate                 | ME405 Scrap Bin       |     -     |
+|  1   | 2'x 2' MDF Base Plate               | Home Depot            |  $14.73   |
+|  1   | Black Ultra Fine Sharpie            | Staples (5-pack)      |   $5.79   |
+|  6   | 1/4" Ball bearings                  | McMaster              |  $24.00   |
+|  3   | 12V Motor w/Encoder, 131 Gear Ratio | Dfrobot.com           |  $87.00   |
+|  1   | 3 VDC Open Frame Pull Solenoid      | Jameco                |   $4.95   |
 
 ## Preliminary CAD
 Below, we have included rough 2D and 3D models showing the proposed
