@@ -35,8 +35,8 @@ machine. Minor components such as hardware and wires are not included.
 |  1   | Aluminum Draw Plate                 | ME405 Scrap Bin       |     -     |
 |  1   | 2'x 2' MDF Base Plate               | Home Depot            |  $14.73   |
 |  1   | Black Ultra Fine Sharpie            | Staples (5-pack)      |   $5.79   |
-|  6   | 1/4" Ball bearings                  | McMaster              |  $15.00   |
-|  3   | 12V Motor w/Encoder, 131 Gear Ratio | Dfrobot.com           |  $29.00   |
+|  6   | 1/4" Ball bearings                  | McMaster              |  $24.00   |
+|  3   | 12V Motor w/Encoder, 131 Gear Ratio | Dfrobot.com           |  $87.00   |
 |  1   | 3 VDC Open Frame Pull Solenoid      | Jameco                |   $4.95   |
 
 ## Preliminary CAD
