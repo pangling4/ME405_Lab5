@@ -9,7 +9,7 @@ simpler than in a serial robot. A generic representation of a planar
 
 ![3-RRR Planar Parallel Robot!](rrr_robot.png)
 
-*Figure 1: Schematic for a generic 3-RRR Planar Parallel Robot.*
+*Figure 1: Schematic for a generic 3-RRR Planar Parallel Robot. [1]*
 
 Since we do not care about the orientation of the 'pen', we can simply
 arbitrarily always set the angle at some constant value and then solve
@@ -48,3 +48,6 @@ There are three motors at the joints of the a-links. The solenoid is sitting
 atop the black pin. There are not currently mounts designed for these, but 
 they will be updated soon. 
 
+[1] G. Johnston, R. Yasin, L. Wang, N. Sarli, and N. Simaan, “Parallel 
+3RRR Robot Classroom Guide,” 07-Jul-2016. [Online]. Available: 
+http://nri-csa.vuse.vanderbilt.edu/joomla/images/Harpeth_Hall_Winterim/Parallel_3RRR_Robot_Classroom_Guide.pdf. [Accessed: 25-Feb-2022]. 
