@@ -17,29 +17,48 @@ class ClosedLoop:
     @brief This class implements a closed loop proportional controller
     '''
     
-    def __init__ (self, kp, setpoint):
+    def __init__ (self, kp, ki, setpoint):
         '''! 
         @brief          Creates a ClosedLoop Controller object
         @details        Creates a ClosedLoop Controller object with the given
                         proportional control gain and reference value
-        @param kp       Controller proportional gain in [% duty cycle/rad] 
+        @param kp       Controller proportional gain in [% duty cycle/rad]
+        @param ki       Controller integral gain [% duty cycle-s/rad]
         @param setpoint Reference value in rad for the system
         '''
         # Set controller proportional gain and setpoint
         self.kp = kp
+        self.ki = ki
         self.setpoint = setpoint
+        self.total_error = 0
+        self.last_time = 0
         
     def update(self, measured):
         '''!
         @brief              Updates the control signal based on the current error
-        @details            Implements proportional control and returns the proportional
-                            gain times the error (setpoint - actual position)
+        @details            Implements PI control and returns the proportional
+                            gain times the error (setpoint - actual position) added
+                            to the integral gain times an approximation of the integral
+                            of the error signal
         @param measured     The current position of the system [rad] to compare to the setpoint
         '''
         
-        # Calculate error and return proportional control signal
+        # Calculate error and proportional control signal
         error = self.setpoint - measured
-        return self.kp*error
+        pro = self.kp*error
+        
+        if self.last_time==0:
+            self.last_time = utime.ticks_ms()
+            
+        # Calculate integral control signal
+        delta_t = utime.ticks_diff(utime.ticks_ms(), self.last_time)
+        self.total_error += error*delta_t
+        integ = self.ki*self.total_error
+        
+        self.last_time = utime.ticks_ms()
+        
+        # Return control signal
+        return pro + integ
         
     def change_setpoint(self, setpoint):
         '''!
@@ -56,3 +75,11 @@ class ClosedLoop:
         '''
         
         self.kp = kp
+        
+    def change_ki(self, ki):
+        '''!
+        @brief       Updates the integral gain value of the controller
+        @param ki    The new integral gain for the controller [% duty cycle-s/rad]
+        '''
+        
+        self.ki = ki
