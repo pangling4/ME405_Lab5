@@ -91,9 +91,9 @@ class RoboBrain:
         self.dbg_Flag = dbg_Flag
         
         # Joints angles
-        self.alpha1 = 0
-        self.alpha2 = 0
-        self.alpha3 = 0
+        self.alpha1 = 0.0
+        self.alpha2 = 0.0
+        self.alpha3 = 0.0
         
         # Initialize other useful geometry variables
         self.prevP = [0, 0]
@@ -104,7 +104,7 @@ class RoboBrain:
         self.prevAlpha3 = 0
         
     
-    def reset_position(self):
+    def reset(self):
         '''!
         @brief Resets the position of the robot to (0,0) at orientation 0
         '''
@@ -179,8 +179,6 @@ class RoboBrain:
         self.prevTheta = self.theta
         self.theta = newTheta
     
-    
-    
     def update_joints(self, newX, newY, newTheta):
         '''!
         @brief          Updates the joint values of the robot 
@@ -230,12 +228,36 @@ class RoboBrain:
         alpha1_1 = alf - omega
         alpha1_2 = (180-alf) - omega
         
+        # Adjust joint options so angle is always between 0 and 360
+        while (alpha1_1 < 0) or (alpha1_1 >= 360):
+            if alpha1_1 < 0:
+                alpha1_1 += 360
+            elif alpha1_1 >= 360:
+                alpha1_1 -= 360
+        
+        while (alpha1_2 < 0) or (alpha1_2 >= 360):
+            if alpha1_2 < 0:
+                alpha1_2 += 360
+            elif alpha1_2 >= 360:
+                alpha1_2 -= 360
+                
         if self.dbg_Flag:
             print("Alpha1, option 1 = ", alpha1_1)
             print("Alpha1, option 2 = ", alpha1_2)
             
+        # Determine correct 'delta' values
+        delta1_1 = abs(alpha1_1-self.prevAlpha1)
+        
+        if delta1_1 > 180:
+            delta1_1 = abs(alpha1_1-self.prevAlpha1-360)
+        
+        delta1_2 = abs(alpha1_2-self.prevAlpha1)
+        
+        if delta1_2 > 180:
+            delta1_2 = abs(alpha1_2-self.prevAlpha1-360)
+        
         # Set alpha 1 to joint value that is closest to previous
-        if(abs(self.prevAlpha1-alpha1_1) < abs(self.prevAlpha1-alpha1_2)):
+        if(delta1_1 < delta1_2):
             self.alpha1 = alpha1_1
         else:
             self.alpha1 = alpha1_2
@@ -266,12 +288,36 @@ class RoboBrain:
         alpha2_1 = alf2 - omega2
         alpha2_2 = (180-alf2) - omega2
         
+        # Adjust joint options so angle is always between 0 and 360
+        while (alpha2_1 < 0) or (alpha2_1 >= 360):
+            if alpha2_1 < 0:
+                alpha2_1 += 360
+            elif alpha2_1 >= 360:
+                alpha2_1 -= 360
+        
+        while (alpha2_2 < 0) or (alpha2_2 >= 360):
+            if alpha2_2 < 0:
+                alpha2_2 += 360
+            elif alpha2_2 >= 360:
+                alpha2_2 -= 360
+                
         if self.dbg_Flag:
             print("Alpha2, option 1 = ", alpha2_1)
             print("Alpha2, option 2 = ", alpha2_2)
             
+        # Determine correct 'delta' values
+        delta2_1 = abs(alpha2_1-self.prevAlpha2)
+        
+        if delta2_1 > 180:
+            delta2_1 = abs(alpha2_1-self.prevAlpha2-360)
+        
+        delta2_2 = abs(alpha2_2-self.prevAlpha2)
+        
+        if delta2_2 > 180:
+            delta2_2 = abs(alpha2_2-self.prevAlpha2-360)
+        
         # Set alpha 2 to joint value that is closest to previous
-        if(abs(self.prevAlpha2-alpha2_1) < abs(self.prevAlpha2-alpha2_2)):
+        if(delta2_1 < delta2_2):
             self.alpha2 = alpha2_1
         else:
             self.alpha2 = alpha2_2
@@ -302,12 +348,36 @@ class RoboBrain:
         alpha3_1 = alf3 - omega3
         alpha3_2 = (180-alf3) - omega3
         
+        # Adjust joint options so angle is always between 0 and 360
+        while (alpha3_1 < 0) or (alpha3_1 >= 360):
+            if alpha3_1 < 0:
+                alpha3_1 += 360
+            elif alpha3_1 >= 360:
+                alpha3_1 -= 360
+        
+        while (alpha3_2 < 0) or (alpha3_2 >= 360):
+            if alpha3_2 < 0:
+                alpha3_2 += 360
+            elif alpha3_2 >= 360:
+                alpha3_2 -= 360
+                
         if self.dbg_Flag:
             print("Alpha3, option 1 = ", alpha3_1)
             print("Alpha3, option 2 = ", alpha3_2)
             
-        # Set alpha 3 to joint value that is closest to previous
-        if(abs(self.prevAlpha3-alpha3_1) < abs(self.prevAlpha3-alpha3_2)):
+        # Determine correct 'delta' values
+        delta3_1 = abs(alpha3_1-self.prevAlpha3)
+        
+        if delta3_1 > 180:
+            delta3_1 = abs(alpha3_1-self.prevAlpha3-360)
+        
+        delta3_2 = abs(alpha3_2-self.prevAlpha3)
+        
+        if delta3_2 > 180:
+            delta3_2 = abs(alpha3_2-self.prevAlpha3-360)
+        
+        # Set alpha 2 to joint value that is closest to previous
+        if(delta3_1 < delta3_2):
             self.alpha3 = alpha3_1
         else:
             self.alpha3 = alpha3_2
@@ -340,7 +410,7 @@ if __name__ == "__main__":
     myRoboBrain.set_y(5)
     print("After setting y to 5, y is:", myRoboBrain.get_y())
     
-    myRoboBrain.reset_position()
+    myRoboBrain.reset()
     print("After resetting position, position is: ", myRoboBrain.get_position())
     
     myRoboBrain.update_joints(7, 5, 0)
