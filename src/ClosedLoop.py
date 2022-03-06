@@ -22,9 +22,9 @@ class ClosedLoop:
         @brief          Creates a ClosedLoop Controller object
         @details        Creates a ClosedLoop Controller object with the given
                         proportional control gain and reference value
-        @param kp       Controller proportional gain in [% duty cycle/rad]
-        @param ki       Controller integral gain [% duty cycle-s/rad]
-        @param setpoint Reference value in rad for the system
+        @param kp       Controller proportional gain in [% duty cycle/degree]
+        @param ki       Controller integral gain [% duty cycle-s/degree]
+        @param setpoint Reference value in degrees for the system
         '''
         # Set controller proportional gain and setpoint
         self.kp = kp
@@ -51,7 +51,8 @@ class ClosedLoop:
             self.last_time = utime.ticks_ms()
             
         # Calculate integral control signal
-        delta_t = utime.ticks_diff(utime.ticks_ms(), self.last_time)
+        delta_t = (utime.ticks_diff(utime.ticks_ms(), self.last_time))/1000
+        #print(delta_t)
         self.total_error += error*delta_t
         integ = self.ki*self.total_error
         
@@ -63,15 +64,16 @@ class ClosedLoop:
     def change_setpoint(self, setpoint):
         '''!
         @brief              Updates the setpoint of the controller
-        @param setpoint     The new setpoint for the controller [rad]
+        @param setpoint     The new setpoint for the controller [degree]
         '''
         
         self.setpoint = setpoint
+        self.last_time = 0
         
     def change_kp(self, kp):
         '''!
         @brief       Updates the proportional gain value of the controller
-        @param kp    The new proportional gain for the controller [% duty cycle/rad]
+        @param kp    The new proportional gain for the controller [% duty cycle/degree]
         '''
         
         self.kp = kp
@@ -79,7 +81,27 @@ class ClosedLoop:
     def change_ki(self, ki):
         '''!
         @brief       Updates the integral gain value of the controller
-        @param ki    The new integral gain for the controller [% duty cycle-s/rad]
+        @param ki    The new integral gain for the controller [% duty cycle-s/degree]
         '''
         
         self.ki = ki
+    
+    def reset_time(self):
+        '''!
+        @brief       Resets the time used to track integral control
+        '''
+        
+        self.last_time = 0
+
+if __name__ == "__main__":
+    myController = ClosedLoop(0,1,100)
+    
+    fakePositions = range(0, 201)
+    print(fakePositions)
+    
+    counter = 0
+    while counter < len(fakePositions):
+        
+        print(counter, myController.update(fakePositions[counter]))
+        
+        counter += 1

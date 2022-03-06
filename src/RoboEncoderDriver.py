@@ -62,12 +62,12 @@ class RoboEncoderDriver:
         '''!
         @brief      Returns current position of encoder
         @details    Converts the current encoder position reading (in ticks)
-                    to radians using the encoder CPR and gear ratio
+                    to degrees using the encoder CPR and gear ratio
         '''
         gearRatio = 131
         CPR = 16
         
-        return self.current_position * 3.1415926535 / (gearRatio*CPR)
+        return self.current_position * 180 / (gearRatio*CPR)
     
 
     def zero(self):
@@ -128,7 +128,7 @@ if __name__ == "__main__":
             print("\ntimer counter3:", encoder3.timer.counter())
             print("\nencoder driver3", encoder3.read())
             
-            if encoder1.read() > 6.28:
+            if encoder1.read() > 360:
                 break
             time += 50
     
