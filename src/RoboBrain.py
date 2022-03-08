@@ -24,13 +24,13 @@ class RoboBrain:
         @param joint1loc    A column or row vector (list) of floats describing
                             the (x, y) location of joint 1 relative to the universal
                             coordinate frame origin. Ex: joint1loc = [5.33, 2.4]
-                            Units are expected to be in inches?
+                            Units are expected to be in inches
         @param joint2loc    A column or row vector (list) of floats describing
                             the (x, y) location of joint 2 relative to the universal
-                            coordinate frame origin in units of inches?
+                            coordinate frame origin in units of inches
         @param joint3loc    A column or row vector (list) of floats describing
                             the (x, y) location of joint 3 relative to the universal
-                            coordinate frame origin in units of inches?
+                            coordinate frame origin in units of inches
         @param alength      The length of the driven arm for each joint. If alength
                             is a single value, it is assumed that each link is
                             symmetrical. If alength is a list, RoboBrain will assume

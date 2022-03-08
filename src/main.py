@@ -18,6 +18,8 @@ import task_share
 
 import JointTask
 import TaskTouch
+import RoboBrain
+import RoboTask
         
 # This code creates a share, a queue, and two tasks, then starts the tasks. The
 # tasks run until somebody presses ENTER, at which time the scheduler stops and
@@ -29,27 +31,18 @@ if __name__ == "__main__":
     touchpad_y = task_share.Queue('f', 100, thread_protect = False, name = "touchpad_y")
     
     # Create queues for joint positions
-    theta_1 = task_share.Queue('f', 100, thread_protect = False, name = "theta_1")
-    theta_2 = task_share.Queue('f', 100, thread_protect = False, name = "theta_2")
-    theta_3 = task_share.Queue('f', 100, thread_protect = False, name = "theta_3")
+    theta_1 = task_share.Queue('f', 100, thread_protect = False, name = "theta_1", overwrite = True)
+    theta_2 = task_share.Queue('f', 100, thread_protect = False, name = "theta_2", overwrite = True)
+    theta_3 = task_share.Queue('f', 100, thread_protect = False, name = "theta_3", overwrite = True)
     
-    # Create share flags to control states in tasks
-#     share_StartTime_1 = task_share.Share('i', thread_protect = False, name = "share_StartTime")
-#     share_Stop_1 = task_share.Share('i', thread_protect = False, name = "share_Stop")
-#     share_StartTime_2 = task_share.Share('i', thread_protect = False, name = "share_StartTime_2")
-#     share_Stop_2 = task_share.Share('i', thread_protect = False, name = "share_Stop_2")
-    
-    # Initialize shared variables
-    # Will be done in the S0_INIT state of the RoboBrain FSM
-    
+    # Create RoboBrain with robot geometry
+    myRoboBrain = RoboBrain.RoboBrain([0,0], [17.75, 0], [8.875, 15.375], 7.25, 7.25, [-1.985, -1.089], \
+                                    [1.829, -1.089], [-0.244, 2.144])
     # Create task objects
     Joint1 = JointTask.JointTask(1, 1, 0.7, 0.05, 0, theta_1)
     Joint2 = JointTask.JointTask(2, 2, 0.7, 0.05, 0, theta_2)
     Joint3 = JointTask.JointTask(3, 3, 0.7, 0.05, 0, theta_3)
-    #Brain = RoboTask.RoboTask()
-    # Need to create RoboTask object with run() method which contains overall FSM controlling
-    # behavior of robot
-    
+    Brain = RoboTask.RoboTask(myRoboBrain, touchpad_x, touchpad_y, theta_1, theta_2, theta_3)   
     
     # Putting task objects in cotask run list
     task1_J1 = cotask.Task(Joint1.run, name = 'Task1_J1', priority = 2,
