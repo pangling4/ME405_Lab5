@@ -41,6 +41,8 @@ class RoboTask:
         pinB10 = pyb.Pin(pyb.Pin.board.PB10, pyb.Pin.OUT_PP)
     
         self.solenoid = RoboSolenoidDriver.RoboSolenoidDriver(pinA8, pinB10, 2, 3)
+        self.solenoid.pull_up()
+
     
         # Create RoboBrain object used to calculate inverse kinematics
         self.RoboBrain = RoboBrain_obj
@@ -88,6 +90,7 @@ class RoboTask:
             elif state == S3_DRAW:
                 if self.ready.get() == 0:
                     self.solenoid.push_down()
+                    print("Stop supplying power to solenoid")
                 # Update positions and move robot accordingly if there are positions waiting
                 elif self.x_queue.any():
                     
@@ -112,7 +115,7 @@ class RoboTask:
                     #pass
                 
                 # Always stays in drawing state until manually reset
-            
+            print(state)
             yield(state)
         
 if __name__ == "__main__":

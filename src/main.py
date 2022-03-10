@@ -18,6 +18,7 @@ import task_share
 
 import JointTask
 import TaskTouch
+
 import RoboBrain
 import RoboTask
         
@@ -44,10 +45,11 @@ if __name__ == "__main__":
     myRoboBrain = RoboBrain.RoboBrain([0,0], [17.75, 0], [8.875, 15.375], 7.25, 7.25, [-1.985, -1.089],
                                     [1.829, -1.089], [-0.244, 2.144])
     # Create task objects
+    Brain = RoboTask.RoboTask(ready, myRoboBrain, touchpad_x, touchpad_y, theta_1, theta_2, theta_3)   
     Touch = TaskTouch.TaskTouch(ready, touchpad_x, touchpad_y)
-    Joint1 = JointTask.JointTask(ready, 1, 1, 0.7, 0.05, 0, theta_1)
-    Joint2 = JointTask.JointTask(ready, 2, 2, 0.7, 0.05, 0, theta_2)
-    Joint3 = JointTask.JointTask(ready, 3, 3, 0.7, 0.05, 0, theta_3)
+    Joint1 = JointTask.JointTask(ready, 1, 1, 0.9, 0.05, 0, theta_1)
+    Joint2 = JointTask.JointTask(ready, 2, 2, 0.9, 0.05, 0, theta_2)
+    Joint3 = JointTask.JointTask(ready, 3, 3, 0.9, 0.05, 0, theta_3)
     Brain = RoboTask.RoboTask(ready, myRoboBrain, touchpad_x, touchpad_y, theta_1, theta_2, theta_3)   
     
     # Putting task objects in cotask run list
@@ -85,10 +87,12 @@ if __name__ == "__main__":
         except KeyboardInterrupt:
             print("End Program")
             ready.put(0)
+            utime.sleep_ms(50)
             task1_J1.schedule()
             task2_J2.schedule()
             task3_J3.schedule()
             task4_B.schedule()
+
             break
         
     

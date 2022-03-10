@@ -47,7 +47,7 @@ class RoboSolenoidDriver:
         @brief This method pulls up the solenoid plunger
         '''
         # Set duty cycle to max
-        self.ch.pulse_width_percent(75)
+        self.ch.pulse_width_percent(95)
         
     def push_down(self):
         '''!

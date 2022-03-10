@@ -135,14 +135,17 @@ class JointTask:
         print("Calibrating motor " + str(self.motor_const))
         
         count = 0
+        press = 0
         clicks = [0, 0]
         
         while True:
             self.encoder.update()
-            
-            if limit.value() == 1:
+            if press == 1 and limit.value() == 0:
+                press = 0
+            if press == 0 and limit.value() == 1:
                 clicks[count] = self.encoder.read()
                 count += 1
+                press = 1
                 print("Limit found")
                 
                 if count == 2:

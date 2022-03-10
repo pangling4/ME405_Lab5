@@ -33,6 +33,6 @@ class TaskTouch:
         while True:
             contact = self.TouchPanel.scan_all()
             if contact[2]:
-                self.touchpad_x.put(contact[0]/25.4 + 8.875)
-                self.touchpad_y.put(contact[1]/25.4 + 5.124)
+                self.touchpad_x.put(contact[0]/15 + 8.875)
+                self.touchpad_y.put(contact[1]/15 + 5.124)
             yield(0)

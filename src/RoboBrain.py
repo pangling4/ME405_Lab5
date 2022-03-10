@@ -257,7 +257,7 @@ class RoboBrain:
             delta1_2 = abs(alpha1_2-self.prevAlpha1-360)
         
         # Set alpha 1 to joint value that is closest to previous
-        if(delta1_1 < delta1_2):
+        if(delta1_1 < delta1_2) and ((alpha1_1 > 315) or (alpha1_1 < 60)):
             self.alpha1 = alpha1_1
         else:
             self.alpha1 = alpha1_2
@@ -317,7 +317,7 @@ class RoboBrain:
             delta2_2 = abs(alpha2_2-self.prevAlpha2-360)
         
         # Set alpha 2 to joint value that is closest to previous
-        if(delta2_1 < delta2_2):
+        if(delta2_1 < delta2_2) and ((alpha2_1 > 60) and (alpha2_1 < 150)):
             self.alpha2 = alpha2_1
         else:
             self.alpha2 = alpha2_2
@@ -377,7 +377,7 @@ class RoboBrain:
             delta3_2 = abs(alpha3_2-self.prevAlpha3-360)
         
         # Set alpha 2 to joint value that is closest to previous
-        if(delta3_1 < delta3_2):
+        if(delta3_1 < delta3_2) and ((alpha3_1 > 180) and (alpha3_2 < 270)):
             self.alpha3 = alpha3_1
         else:
             self.alpha3 = alpha3_2
