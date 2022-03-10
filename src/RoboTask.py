@@ -115,7 +115,6 @@ class RoboTask:
             
             yield(state)
         
-        
 if __name__ == "__main__":
     pass
     

@@ -66,6 +66,7 @@ class JointTask:
             self.motor = RoboMotorDriver.RoboMotorDriver(pinA9, pinB4, 3, 1)
         
         self.motor.set_duty_cycle(0)
+        
         # Check encoder number and create corresponding RoboEncoderDriver
         if encoder_const==1:
             self.encoder = RoboEncoderDriver.RoboEncoderDriver(pyb.Pin(pyb.Pin.board.PB6), pyb.Pin(pyb.Pin.board.PB7), 4)
@@ -85,6 +86,7 @@ class JointTask:
         # Create joint angle value
         self.theta = 0
         
+        
         self.calibrate()
         
         
@@ -97,8 +99,11 @@ class JointTask:
         
         while True:
             #Update angle from shared kinematics
+            
             if self.ready.get() == 0:
                 self.motor.set_duty_cycle(0)
+                print("Motor Off")
+                
             else:
                 if self.theta_queue.any():
                     newTheta = self.theta_queue.get()
@@ -112,25 +117,44 @@ class JointTask:
                 self.encoder.update()
                 self.motor.set_duty_cycle(self.controller.update(self.encoder.read()))
             yield(0)
-        
+
     def calibrate(self):
         if self.motor_const == 1:
-            limit = pyb.Pin(pyb.Pin.cpu.C1, pyb.Pin.IN)
-            theta = 0
+            limit = pyb.Pin(pyb.Pin.cpu.C4, pyb.Pin.PULL_DOWN)
+            theta1 = 4
+            theta2 = 6
         elif self.motor_const == 2:
-            limit = pyb.Pin(pyb.Pin.cpu.A5, pyb.Pin.IN)
-            theta = 120
+            limit = pyb.Pin(pyb.Pin.cpu.C1, pyb.Pin.PULL_DOWN)
+            theta1 = 122
+            theta2 = 124
         elif self.motor_const == 3:
-            limit = pyb.Pin(pyb.Pin.cpu.C4, pyb.Pin.IN)
-            theta = 240
+            limit = pyb.Pin(pyb.Pin.cpu.A5, pyb.Pin.PULL_DOWN)
+            theta1 = 242
+            theta2 = 243
         
-        self.motor.set_duty_cycle(20)
-        # while True:
-            #if limit.value() == 1:
-        input()
-        self.encoder.setTheta(theta)
-        self.motor.set_duty_cycle(0)
-            #break
+        print("Calibrating motor " + str(self.motor_const))
+        
+        count = 0
+        clicks = [0, 0]
+        
+        while True:
+            self.encoder.update()
+            
+            if limit.value() == 1:
+                clicks[count] = self.encoder.read()
+                count += 1
+                print("Limit found")
+                
+                if count == 2:
+                    if(clicks[0] > clicks[1]):
+                        self.encoder.setTheta(theta1)
+                    elif (clicks[1] > clicks[0]):
+                        self.encoder.setTheta(theta2)
+                    else:
+                        self.encoder.setTheta((theta1+theta2)/2)
+                    print("calibration complete")
+                    break
+                
         
 if __name__ == "__main__":
     pass

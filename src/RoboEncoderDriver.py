@@ -112,33 +112,35 @@ if __name__ == "__main__":
     
     motor3 = RoboMotorDriver.RoboMotorDriver(pinA9, pinB4, 3, 1)
     
-    # Start motor 1, 2, 3
-    motor1.set_duty_cycle(25)
-    motor2.set_duty_cycle(25)
-    motor3.set_duty_cycle(25)
-    
-    time = utime.ticks_ms()
-    
-    #while utime.ticks_ms() < (time + 10000):
-    while True:
-        encoder1.update()
-        encoder2.update()
-        encoder3.update()
+    try:
+        # Start motor 1, 2, 3
+        motor1.set_duty_cycle(20)
+        motor2.set_duty_cycle(20)
+        motor3.set_duty_cycle(20)
         
-        if (utime.ticks_ms() > (time + 50)):
-            print("\ntimer counter1:", encoder1.timer.counter())
-            print("\nencoder driver1", encoder1.read())
+        time = utime.ticks_ms()
+        
+        #while utime.ticks_ms() < (time + 10000):
+        while True:
+            encoder1.update()
+            encoder2.update()
+            encoder3.update()
             
-            print("\ntimer counter2:", encoder2.timer.counter())
-            print("\nencoder driver2", encoder2.read())
-            
-            print("\ntimer counter3:", encoder3.timer.counter())
-            print("\nencoder driver3", encoder3.read())
-            
-            if encoder1.read() > 360:
-                break
-            time += 50
-    
-    motor1.set_duty_cycle(0)
-    motor2.set_duty_cycle(0)
-    motor3.set_duty_cycle(0)
+            if (utime.ticks_ms() > (time + 50)):
+                print("\ntimer counter1:", encoder1.timer.counter())
+                print("\nencoder driver1", encoder1.read())
+                
+                print("\ntimer counter2:", encoder2.timer.counter())
+                print("\nencoder driver2", encoder2.read())
+                
+                print("\ntimer counter3:", encoder3.timer.counter())
+                print("\nencoder driver3", encoder3.read())
+                
+                if encoder1.read() > 360:
+                    break
+                time += 50
+                
+    except KeyboardInterrupt:
+        motor1.set_duty_cycle(0)
+        motor2.set_duty_cycle(0)
+        motor3.set_duty_cycle(0)

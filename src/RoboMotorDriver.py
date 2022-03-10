@@ -18,7 +18,7 @@ class RoboMotorDriver:
     '''! 
     @brief This class allows instances of motors to be made and controlled individually
     '''
-    duty_limit = 10
+    duty_limit = 100
     def __init__ (self, dir_Pin, speed_Pin, timer_Num, channel_Num):
         '''! 
         @brief Instantiates motor driver by initializing GPIO pins and turning the motor off for safety. 

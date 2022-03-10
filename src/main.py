@@ -33,6 +33,7 @@ if __name__ == "__main__":
     # Create share to synchronize start, stop of drawing
     ready = task_share.Share('i', thread_protect = False, name = "drawing")
     ready.put(1)
+
     
     # Create queues for joint positions
     theta_1 = task_share.Queue('f', 100, thread_protect = False, name = "theta_1", overwrite = True)
@@ -70,12 +71,13 @@ if __name__ == "__main__":
     cotask.task_list.append(task3_J3)
     cotask.task_list.append(task4_B)
     cotask.task_list.append(task5)
-    print("task list made")
+    
     # Run the memory garbage collector to ensure memory is as defragmented as
     # possible before the real-time scheduler is started
     gc.collect ()
-    print("task list made")
 
+    input("Press enter to start")
+    
     while True:
         try:
             cotask.task_list.pri_sched()
