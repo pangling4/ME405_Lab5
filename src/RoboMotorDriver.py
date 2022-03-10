@@ -18,7 +18,7 @@ class RoboMotorDriver:
     '''! 
     @brief This class allows instances of motors to be made and controlled individually
     '''
-
+    duty_limit = 10
     def __init__ (self, dir_Pin, speed_Pin, timer_Num, channel_Num):
         '''! 
         @brief Instantiates motor driver by initializing GPIO pins and turning the motor off for safety. 
@@ -51,8 +51,8 @@ class RoboMotorDriver:
         if duty > 0:
             self.dirPin.low()
             # CASE 1: duty cycle needs to be at MAX = 100%
-            if duty > 100:
-                self.ch.pulse_width_percent(100)
+            if duty > self.duty_limit:
+                self.ch.pulse_width_percent(self.duty_limit)
             # CASE 2: duty cycle is below MAX = 100%
             else:
                 self.ch.pulse_width_percent(duty)  
@@ -61,8 +61,8 @@ class RoboMotorDriver:
         elif duty < 0:
             self.dirPin.high()
             # CASE 3: duty cycle needs to be at MAX = 100%
-            if duty < -100:
-                self.ch.pulse_width_percent(100)
+            if duty < -self.duty_limit:
+                self.ch.pulse_width_percent(self.duty_limit)
             # CASE 4: duty cycle is below MAX = 100%
             else:
                 self.ch.pulse_width_percent(-duty)
@@ -84,6 +84,7 @@ class RoboMotorDriver:
         '''
         pass
         
+    
 if __name__ == "__main__":
     '''!
     @brief Tests MotorDriver.py by creating two MotorDriver objects and sets them to different speeds

@@ -20,7 +20,7 @@ class JointTask:
     This class implements a motor, encoder, and control task to control robot joints. 
     '''
     
-    def __init__ (self, motor_const, encoder_const, kp, ki, setpoint, queue_theta):
+    def __init__ (self, ready, motor_const, encoder_const, kp, ki, setpoint, queue_theta):
         '''! 
         @brief                  Creates a JointTask object
         @details                Creates RoboMotorDriver, RoboEncoderDriver, and ClosedLoop
@@ -42,6 +42,9 @@ class JointTask:
         @param setpoint         The setpoint in degrees for the closed loop controller
         @param queue_theta      The shares.Queue corresponding to this joint's theta value
         '''
+        self.motor_const = motor_const
+        
+        self.ready = ready
         
         # Check motor number and create corresponding RoboMotorDriver
         if motor_const==1:
@@ -61,7 +64,8 @@ class JointTask:
             pinB4 = pyb.Pin(pyb.Pin.board.PB4, pyb.Pin.OUT_PP)
     
             self.motor = RoboMotorDriver.RoboMotorDriver(pinA9, pinB4, 3, 1)
-            
+        
+        self.motor.set_duty_cycle(0)
         # Check encoder number and create corresponding RoboEncoderDriver
         if encoder_const==1:
             self.encoder = RoboEncoderDriver.RoboEncoderDriver(pyb.Pin(pyb.Pin.board.PB6), pyb.Pin(pyb.Pin.board.PB7), 4)
@@ -81,6 +85,8 @@ class JointTask:
         # Create joint angle value
         self.theta = 0
         
+        self.calibrate()
+        
         
     def run(self):
         '''!
@@ -91,17 +97,40 @@ class JointTask:
         
         while True:
             #Update angle from shared kinematics
-            newTheta = self.theta_queue.get()
-            if self.theta != newTheta:
-                self.theta = newTheta
-                self.controller.change_setpoint(self.theta)
-            
-            # Update encoder and change control signal
-            self.encoder.update()
-            self.motor.set_duty_cycle(self.controller.update(self.encoder.read()))
-            
+            if self.ready.get() == 0:
+                self.motor.set_duty_cycle(0)
+            else:
+                if self.theta_queue.any():
+                    newTheta = self.theta_queue.get()
+                else:
+                    newTheta = self.theta
+                if self.theta != newTheta:
+                    self.theta = newTheta
+                    self.controller.change_setpoint(self.theta)
+                
+                # Update encoder and change control signal
+                self.encoder.update()
+                self.motor.set_duty_cycle(self.controller.update(self.encoder.read()))
             yield(0)
         
+    def calibrate(self):
+        if self.motor_const == 1:
+            limit = pyb.Pin(pyb.Pin.cpu.C1, pyb.Pin.IN)
+            theta = 0
+        elif self.motor_const == 2:
+            limit = pyb.Pin(pyb.Pin.cpu.A5, pyb.Pin.IN)
+            theta = 120
+        elif self.motor_const == 3:
+            limit = pyb.Pin(pyb.Pin.cpu.C4, pyb.Pin.IN)
+            theta = 240
+        
+        self.motor.set_duty_cycle(20)
+        # while True:
+            #if limit.value() == 1:
+        input()
+        self.encoder.setTheta(theta)
+        self.motor.set_duty_cycle(0)
+            #break
         
 if __name__ == "__main__":
     pass

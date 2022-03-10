@@ -14,12 +14,15 @@ S1_CALIBRATE_TP = 1
 S2_CALIBRATE_MOT = 2
 S3_DRAW = 3
 
+import pyb
+import RoboSolenoidDriver
+
 class RoboTask:
     '''! 
     This class implements a RoboBrain object to allow multitasking with the robot joints. 
     '''
     
-    def __init__ (self, RoboBrain_obj, queue_x, queue_y, queue_th1, queue_th2, queue_th3):
+    def __init__ (self, ready, RoboBrain_obj, queue_x, queue_y, queue_th1, queue_th2, queue_th3):
         '''! 
         @brief                  Creates a RoboTask object
         @details                Controls operation of the robot with a FSM machine in the
@@ -33,7 +36,12 @@ class RoboTask:
         @param queue_th2        The shares.Queue corresponding to joint 2 theta value
         @param queue_th3        The shares.Queue corresponding to joint 3 theta value
         '''
-        
+        self.ready = ready
+        pinA8 = pyb.Pin(pyb.Pin.board.PA8, pyb.Pin.OUT_PP)
+        pinB10 = pyb.Pin(pyb.Pin.board.PB10, pyb.Pin.OUT_PP)
+    
+        self.solenoid = RoboSolenoidDriver.RoboSolenoidDriver(pinA8, pinB10, 2, 3)
+    
         # Create RoboBrain object used to calculate inverse kinematics
         self.RoboBrain = RoboBrain_obj
         
@@ -59,14 +67,13 @@ class RoboTask:
         while True:
             
             if state == S0_INIT:
-                
                 # Reset all queues
                 self.x_queue.clear()
                 self.y_queue.clear()
                 self.theta1_queue.clear()
                 self.theta2_queue.clear()
                 self.theta3_queue.clear()
-                
+                state = S3_DRAW
             
             elif state == S1_CALIBRATE_TP:
                 # Run touchpad calibration method
@@ -79,24 +86,30 @@ class RoboTask:
                 pass
             
             elif state == S3_DRAW:
-                
+                if self.ready.get() == 0:
+                    self.solenoid.push_down()
                 # Update positions and move robot accordingly if there are positions waiting
-                if self.x_queue.any():
+                elif self.x_queue.any():
                     
+                    self.solenoid.push_down()
                     # Inverse kinematic calculation, arbitrarily set angle to 0 degrees
-                    self.RoboBrain.update_joints(self.x_queue.get(), self.y_queue.get(), 0)
+                    x = self.x_queue.get()
+                    y = self.y_queue.get()
+                    self.RoboBrain.update_joints(x, y, 0)
                     
                     # Update desired joint values for joint tasks
                     self.theta1_queue.put(self.RoboBrain.get_alpha1())
+                    print("x: " + str(x) + "     y: "+ str(y))
+                    print("theta1:" + str(self.RoboBrain.get_alpha1()))
                     self.theta2_queue.put(self.RoboBrain.get_alpha2())
+                    print("theta2:" + str(self.RoboBrain.get_alpha2()))
                     self.theta3_queue.put(self.RoboBrain.get_alpha3())
-                    
-                    # Solenoid.pen_down()
-                    
+                    print("theta3:" + str(self.RoboBrain.get_alpha3()))
+                                        
                 else:
                     # If no positions are waiting to be moved to, raise the solenoid
-                    # Solenoind.pen_up()
-                    pass
+                    self.solenoid.pull_up()
+                    #pass
                 
                 # Always stays in drawing state until manually reset
             

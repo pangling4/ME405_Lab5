@@ -16,6 +16,8 @@ class RoboEncoderDriver:
     '''! 
     This class implements an encoder driver for an ME 405 Robot. 
     '''
+    gearRatio = 131
+    CPR = 16
     
     def __init__ (self, in1pin, in2pin, timer):
         '''! 
@@ -63,11 +65,8 @@ class RoboEncoderDriver:
         @brief      Returns current position of encoder
         @details    Converts the current encoder position reading (in ticks)
                     to degrees using the encoder CPR and gear ratio
-        '''
-        gearRatio = 131
-        CPR = 16
-        
-        return self.current_position * 180 / (gearRatio*CPR)
+        '''        
+        return self.current_position * 180 / (self.gearRatio*self.CPR)
     
 
     def zero(self):
@@ -76,6 +75,14 @@ class RoboEncoderDriver:
         '''
         
         self.current_position = 0
+        self.delta = 0
+        self.timer.counter(0)
+    
+    def setTheta(self, theta):
+        '''!
+        @brief      Zeros the encoder position
+        '''
+        self.current_position = theta*self.gearRatio*self.CPR/180
         self.delta = 0
         self.timer.counter(0)
         

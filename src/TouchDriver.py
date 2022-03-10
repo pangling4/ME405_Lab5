@@ -29,7 +29,7 @@ import utime
 from ulab import numpy as np
 import os
 
-class Touch_Panel:
+class TouchDriver:
     
     '''@brief       sets up pin read out values for xyz scanner
        @details     takes in each pin and board dimensions to set up origin'''
@@ -183,7 +183,7 @@ if __name__ == "__main__":
 
     '''@brief            instantiates touch panel attributes pin setup, panel dimensions, and origin offset
     '''
-    panel = Touch_Panel(Pin.cpu.A7, Pin.cpu.A1, Pin.cpu.A6, Pin.cpu.A0)
+    panel = TouchDriver(Pin.cpu.C3, Pin.cpu.C0, Pin.cpu.C2, Pin.cpu.B0)
     panel.calibrate()
 
     while True:

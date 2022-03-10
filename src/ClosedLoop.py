@@ -44,7 +44,13 @@ class ClosedLoop:
         '''
         
         # Calculate error and proportional control signal
-        error = self.setpoint - measured
+        err_negative = self.setpoint - 360 - measured
+        err_positive = self.setpoint - measured
+        if abs(err_negative ) < err_positive:
+            error = err_negative
+        else:
+            error = err_positive
+            
         pro = self.kp*error
         
         if self.last_time==0:
