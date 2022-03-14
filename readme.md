@@ -85,15 +85,34 @@ mounts which allowed the a-links to hold the limit switches for
 calibration.
 
 ## Software Overview
-This section briefly describes the software organization for this
-project with a task diagram and state transition diagram. The detailed
-documentation is found on the doxygen mainpage, linked below:
+This section summarizes the software organization for this project with
+a task diagram and state transition diagram. The detailed documentation
+is found on the doxygen mainpage, linked below:
+https://pangling4.github.io/TermProject/
 
 ### Task Diagram
-Information about tasks here
+This section briefly explains the task organization for the cooperative
+multitasking used in this project. The five tasks that were run by the
+priority scheduler are shown below in the task diagram. Each joint task
+consists of a RoboMotorDriver, a RoboEncoderDriver, and a ClosedLoop 
+controller. The joint tasks receive the desired angle from the brain
+and perform closed loop PI control using the motor and encoder to move
+the link to the desired position. The angles are computed in the brain
+from the inverse kinematic equations and the x and y coordinate which
+are read from the touchpad.The readyFlag allows the motors and solenoid
+to be shut off when the robot is ready to be shut down.
+
+![3DOF Parallel Robot Task Diagram!](TaskDiagram.png)
+
+*Figure 2: Task Diagram for 3-RRR Planar Parallel Robot.*
 
 ### State Transition Diagram
-Information about FSM here
+Information about FSM here - need to update to reflect actual operation
+
+3R_FSM_Touch.drawio.png
+![3DOF Parallel Robot State Transition Diagram!](3R_FSM_Touch.drawio.png)
+
+*Figure 3: State Transition Diagram for 3-RRR Planar Parallel Robot.*
 
 ## Results
 Overall, due to the limited timeline for the project, the system has
@@ -106,20 +125,83 @@ during a step response could damamge the robot.
 After final assembly, the robot was tested by having users draw on the
 touchpad and observing the behavior. The robot's intended functionality
 was evident in these tests, although it did not perform to our
-satisfaction.
+satisfaction. One of the major problems we found was that the nature of
+a parallel robot having interconnected and interdepedent links often
+caused the robot to 'lock up' in a degenerate position where it could 
+not move any of its links. When this happened, we had to restart the
+robot and manually move the links back to a position where they could
+move freely.
+
+Other issues we became aware of during were the backlash in the a-links
+and the method of control for the inverse kinematics. Both of these
+issues contributed to 'sloppy' behavior for the drawing platform, since
+a motion on the touchpad would either not be large enough to cause a
+motion on the platform (due to small angle changes and large backlash),
+or the motion would be overwritten by the next motion since the links
+were not able to respond fast enough. Thus, the actual motion of the
+drawing platform did not match the motion of the user's hand on the
+touchpad.
 
 ## Project Learning Outcomes
-Explain learning here. Mechanical - harder than expected
+Overall, this project was more difficult and time-consuming than we
+expected, mainly because of the mechanical complexities in our design
+and difficulties we encountered during manufacturing and assembly. The
+following sections describe some of the major difficulties we faced,
+how we adapted to them, and future recommendations for others who build
+a similar robot.
 
-## Preliminary CAD
-Below, we have included rough 2D and 3D models showing the proposed
-arrangement of our machine.
-![3-RRR Planar Parallel Robot Top View!](3R_top_cad.JPG)
-![3-RRR Planar Parallel Robot Isometric View!](3R_iso_2.JPG)
-![3-RRR Planar Parallel Robot Isometric View 2!](3R_iso.JPG)
-There are three motors at the joints of the a-links. The solenoid is sitting 
-atop the black pin. There are not currently mounts designed for these, but 
-they will be updated soon. 
+### Difficulties Encountered
+One major problem we encountered while assembling our robot was getting
+th a-links to attach securely to the motor shafts. Our original design 
+used steel shaft collars with set screws that would be epoxied to the
+a-links and then securely tightened onto the d-flat of the motor shaft.
+However, the shaft collars would consistently fall off of the a-links
+during testing and loading, likely because the surfaces were not well
+prepared for epoxy and possibly because the metals being bonded were
+not the same (steel vs aluminum). In the final robot, we used d-shaped
+holes waterjet into the links directly, but due to the small difference
+in diameter between the motor shaft OD and d flat, these ended up
+having large amounts of backlash.
+
+Another issue we encountered was in calibration. After creating the 3D
+printed mounts for the limit switches and ramps used to locate a known
+location for each link, we realized that having the mounts on the links
+interfered with the robot motion in some configurations. This could 
+have been mitigated by shifting the limit switches closer to the motors
+on the link; however, the ramp had already been glued down on the base.
+One solution to this problem would be to make longer ramps to allow the
+limit switch to slide along the link to any necessary location. An even
+better solution would be to embedd the limit switches in the base and
+mount the ramps to the bottom of the link, thus reducing the wiring
+complexity and allowing the links to move freely without interference.
+
+### Future Recommendations
+Overall, the most important recommendation we can offer anyone desiring
+to build a similar project is to spend adequate time on the mechanical
+design. Creating detailed models, testing the connection methods and
+layout, and iterating on failed designs are all important steps in the
+design process that should not be skipped. Even the best-written
+software is useless if the motor shaft is not securely attached to the
+robot link.
+
+Part of the challenge on this project for our team was the limited time
+given to complete it. Do not underestimate the time necessary for 
+manufacturing your robot. In addition, it is very helpful to buy or
+make spare parts for your robot, since you never know when a screw head
+will strip, or glue will come loose, or other issue that requires a
+replacement. Software can be updated and improved (relatively) easily,
+requiring only time to debug and test. On the other hand, updating or
+improving mechanical hardware can be significantly more challenging,
+especially if tools or materials are not readily available.
+
+## CAD
+The mechanical design for this project was performed in SolidWorks. All
+of the models created for the project can be found under the src folder
+in the CAD Rev4 folder, which has been updated to reflect the actual
+dimensions are layout of the robot as-built. The wiring and attachment
+components (such as tape and hot glue) are not shown.
+
+Link: https://github.com/pangling4/TermProject/tree/main/src/CAD%20Rev4
 
 [1] G. Johnston, R. Yasin, L. Wang, N. Sarli, and N. Simaan, “Parallel 
 3RRR Robot Classroom Guide,” 07-Jul-2016. [Online]. Available: 
