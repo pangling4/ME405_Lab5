@@ -120,7 +120,7 @@ not been extensively tested. During the development of the controller
 for the system, the motors underwent step response tests to determine
 appropriate proportional and integral gains. However, these tests were
 performed without any load on the motor shaft, as attaching the links
-during a step response could damamge the robot.
+during a step response could damage the robot.
 
 After final assembly, the robot was tested by having users draw on the
 touchpad and observing the behavior. The robot's intended functionality
@@ -132,27 +132,26 @@ not move any of its links. When this happened, we had to restart the
 robot and manually move the links back to a position where they could
 move freely.
 
-Other issues we became aware of during were the backlash in the a-links
-and the method of control for the inverse kinematics. Both of these
-issues contributed to 'sloppy' behavior for the drawing platform, since
-a motion on the touchpad would either not be large enough to cause a
-motion on the platform (due to small angle changes and large backlash),
-or the motion would be overwritten by the next motion since the links
-were not able to respond fast enough. Thus, the actual motion of the
-drawing platform did not match the motion of the user's hand on the
-touchpad.
+Other issues we became aware of during testing were the backlash in the
+a-links and the method of control for the inverse kinematics. Both of 
+these issues contributed to 'sloppy' behavior for the drawing platform,
+since a motion on the touchpad would either not be large enough to 
+cause a motion on the platform (due to small angle changes and large 
+backlash), or the motion would be overwritten by the next motion since
+the links were not able to respond fast enough. Thus, the actual motion
+of the drawing platform did not match the motion of the user's hand on
+the touchpad.
 
 ## Project Learning Outcomes
 Overall, this project was more difficult and time-consuming than we
 expected, mainly because of the mechanical complexities in our design
 and difficulties we encountered during manufacturing and assembly. The
-following sections describe some of the major difficulties we faced,
-how we adapted to them, and future recommendations for others who build
-a similar robot.
+following sections describe some of the major difficulties we faced and
+future recommendations for others who build a similar robot.
 
 ### Difficulties Encountered
 One major problem we encountered while assembling our robot was getting
-th a-links to attach securely to the motor shafts. Our original design 
+the a-links to attach securely to the motor shafts. Our original design 
 used steel shaft collars with set screws that would be epoxied to the
 a-links and then securely tightened onto the d-flat of the motor shaft.
 However, the shaft collars would consistently fall off of the a-links
@@ -174,6 +173,8 @@ limit switch to slide along the link to any necessary location. An even
 better solution would be to embedd the limit switches in the base and
 mount the ramps to the bottom of the link, thus reducing the wiring
 complexity and allowing the links to move freely without interference.
+However, due to the time constraint on the project, we were not able to
+implement these improvements.
 
 ### Future Recommendations
 Overall, the most important recommendation we can offer anyone desiring
@@ -188,7 +189,7 @@ Part of the challenge on this project for our team was the limited time
 given to complete it. Do not underestimate the time necessary for 
 manufacturing your robot. In addition, it is very helpful to buy or
 make spare parts for your robot, since you never know when a screw head
-will strip, or glue will come loose, or other issue that requires a
+will strip, or glue will come loose, or other issue will occur that requires a
 replacement. Software can be updated and improved (relatively) easily,
 requiring only time to debug and test. On the other hand, updating or
 improving mechanical hardware can be significantly more challenging,
@@ -198,7 +199,7 @@ especially if tools or materials are not readily available.
 The mechanical design for this project was performed in SolidWorks. All
 of the models created for the project can be found under the src folder
 in the CAD Rev4 folder, which has been updated to reflect the actual
-dimensions are layout of the robot as-built. The wiring and attachment
+dimensions and layout of the robot as-built. The wiring and attachment
 components (such as tape and hot glue) are not shown.
 
 Link: https://github.com/pangling4/TermProject/tree/main/src/CAD%20Rev4
