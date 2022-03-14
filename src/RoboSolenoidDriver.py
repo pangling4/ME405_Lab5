@@ -1,7 +1,7 @@
 """!
 @file RoboSolenoidDriver.py
 This solenoid driver utilizes the DRI0039 MotorDriver shield from DFRobot which
-uses two TB6612FNG driver circuits to be able to cotnrol up to 4 motors. This
+uses two TB6612FNG driver circuits to be able to control up to 4 motors. This
 class is designed for use along with the Nucleo L476RG microcontroller to control
 the motion of a solenoid by setting the pin high or low. 
 
@@ -29,7 +29,7 @@ class RoboSolenoidDriver:
         @param timer_Num     An integer designating which timer to use for the pin objects specified
         @param channel_Num   An integer representing the channel used with the motor timer
         '''
-        print ('Creating a robo motor driver')
+        print ('Creating a robo solenoid driver')
         
         # Direction pin and speed pin
         self.dirPin = dir_Pin

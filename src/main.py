@@ -1,7 +1,6 @@
 """!
 @file main.py
-    This file contains tasks to simultaneously perform closed loop control
-    on two Pittman motors in ME 405 Lab
+@brief This file contains tasks to control the operation of a parallel 3RRR drawing robot for ME 405
     
 @author Jonathan Cederquist
 @author Tim Jain

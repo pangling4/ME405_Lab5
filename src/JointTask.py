@@ -27,6 +27,8 @@ class JointTask:
                                 controller objects corresponding to the given constants to
                                 control the motion of a joint on the 3 RRR planar parallel
                                 robot.
+        @param ready            A task_share.Share variable that is used as a flag to turn
+                                off the joint motor when the robot shuts down
         @param motor_const      An integer denoting the motor associated with the joint.
                                 Motor 1 corresponds to M1, pins PB5 and PB3
                                 Motor 2 corresponds to M2, pins PA6 and PA7
@@ -40,8 +42,9 @@ class JointTask:
         @param ki               The integral gain constatn used for the closed loop controller
                                 The constant should be given in units of [% duty cycle * sec/degree]
         @param setpoint         The setpoint in degrees for the closed loop controller
-        @param queue_theta      The shares.Queue corresponding to this joint's theta value
+        @param queue_theta      The task_share.Queue corresponding to this joint's theta value
         '''
+        
         self.motor_const = motor_const
         
         self.ready = ready
@@ -86,7 +89,7 @@ class JointTask:
         # Create joint angle value
         self.theta = 0
         
-        
+        # Run calibration on creation of each joint
         self.calibrate()
         
         
@@ -119,6 +122,14 @@ class JointTask:
             yield(0)
 
     def calibrate(self):
+        '''!
+        @brief      Calibrates the joint encoder to the correct position
+        @details    Waits for the user to manually move the link past the limit
+                    switch ramp and sets the encoder value to the correct angle
+                    after the link has moved back and forth across the limit
+                    switch ramp.
+        '''
+        
         if self.motor_const == 1:
             limit = pyb.Pin(pyb.Pin.cpu.C4, pyb.Pin.PULL_DOWN)
             theta1 = 4

@@ -21,8 +21,8 @@ class RoboEncoderDriver:
     
     def __init__ (self, in1pin, in2pin, timer):
         '''! 
-        @brief          Creates an encoder driver object
-        @details        Creates an encoder driver by initializing timers and channels with 
+        @brief          Creates an RoboEncoderDriver object
+        @details        Creates a RoboEncoderDriver by initializing timers and channels with 
                         given pins and timer number
         @param in1pin   A pyb.Pin object corresponding to the encoder channel A 
         @param in2pin   A pyb.Pin object corresponding to the encoder channel B
@@ -80,7 +80,8 @@ class RoboEncoderDriver:
     
     def setTheta(self, theta):
         '''!
-        @brief      Zeros the encoder position
+        @brief       Sets the theta position of the encoder to the given value
+        @param theta The angle (in degrees) to set the encoder's position to
         '''
         self.current_position = theta*self.gearRatio*self.CPR/180
         self.delta = 0

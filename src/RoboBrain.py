@@ -53,6 +53,7 @@ class RoboBrain:
                             the (x, y) location of attachment point C3 relative
                             to the center of the moving platform P when the robot
                             is in the reset position. Units are expected in inches
+        @param dbg_Flag     A flag used to turn on/off debug mode
         '''
         
         # Save joint locations

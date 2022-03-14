@@ -1,12 +1,12 @@
 ''' @file       ClosedLoop.py
-    @brief      Implements closed loop proportional controller for position
-    @details    Class of closed loop controller that can be used to control PITTMAN motors given in ME 405 lab
+    @brief      Implements closed loop PI controller on motor position
+    @details    Class of closed loop controller that can be used to control motors given in ME 405 lab
                 with NUCLEO L476RG microcontroller
                 
     @author     Jonathan Cederquist
     @author     Tim Jain
     @author     Philip Pang
-    @date       Last Modified 2/2/22
+    @date       Last Modified 3/2/22
 '''
 
 import pyb
@@ -14,14 +14,14 @@ import utime
 
 class ClosedLoop:
     '''!
-    @brief This class implements a closed loop proportional controller
+    @brief This class implements a closed loop PI controller
     '''
     
     def __init__ (self, kp, ki, setpoint):
         '''! 
         @brief          Creates a ClosedLoop Controller object
         @details        Creates a ClosedLoop Controller object with the given
-                        proportional control gain and reference value
+                        proportional control gain, integral gain, and reference value
         @param kp       Controller proportional gain in [% duty cycle/degree]
         @param ki       Controller integral gain [% duty cycle-s/degree]
         @param setpoint Reference value in degrees for the system
@@ -40,7 +40,7 @@ class ClosedLoop:
                             gain times the error (setpoint - actual position) added
                             to the integral gain times an approximation of the integral
                             of the error signal
-        @param measured     The current position of the system [rad] to compare to the setpoint
+        @param measured     The current position of the system [degree] to compare to the setpoint
         '''
         
         # Calculate error and proportional control signal

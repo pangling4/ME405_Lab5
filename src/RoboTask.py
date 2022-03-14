@@ -28,13 +28,15 @@ class RoboTask:
         @details                Controls operation of the robot with a FSM machine in the
                                 run method which is used by a scheduler to control operation
                                 of a parallel 3RR robot
-        @param motor_const      A RoboBrain object which contains information about the geometry
+        @param ready            A task_share.Share used to stop operation when the robot is shut
+                                down.
+        @param RoboBrain_obj    A RoboBrain object which contains information about the geometry
                                 of the robot.
-        @param queue_x          The shares.Queue corresponding to finger x value on the touchpad
-        @param queue_y          The shares.Queue corresponding to finger y value on the touchpad
-        @param queue_th1        The shares.Queue corresponding to joint 1 theta value
-        @param queue_th2        The shares.Queue corresponding to joint 2 theta value
-        @param queue_th3        The shares.Queue corresponding to joint 3 theta value
+        @param queue_x          The task_share.Queue corresponding to finger x value on the touchpad
+        @param queue_y          The task_share.Queue corresponding to finger y value on the touchpad
+        @param queue_th1        The task_share.Queue corresponding to joint 1 theta value
+        @param queue_th2        The task_share.Queue corresponding to joint 2 theta value
+        @param queue_th3        The task_share.Queue corresponding to joint 3 theta value
         '''
         self.ready = ready
         pinA8 = pyb.Pin(pyb.Pin.board.PA8, pyb.Pin.OUT_PP)
@@ -59,9 +61,9 @@ class RoboTask:
     def run(self):
         '''!
         @brief      Generator FSM which controls operation of the robot
-        @details    Has states to calibrate the touch panel, calibrate the motors,
-                    and continuously update the joint values for the robot
-                    as a finger moves along the touchpad
+        @details    Initializes the shared variables, then continuously updates
+                    the joint values for the robot as a finger moves along the touchpad.
+                    Calibration is done in the main file when tasks are created.
         '''
         
         state = S0_INIT
