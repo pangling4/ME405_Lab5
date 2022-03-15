@@ -68,14 +68,14 @@ $(document).ready(function(){initNavTree('class_closed_loop_1_1_closed_loop.html
 </div><!--header-->
 <div class="contents">
 
-<p>This class implements a closed loop proportional controller.  
+<p>This class implements a closed loop PI controller.  
  <a href="class_closed_loop_1_1_closed_loop.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aac390fbdf46fc09e2aa29eda413c2f77"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_closed_loop_1_1_closed_loop.html#aac390fbdf46fc09e2aa29eda413c2f77">__init__</a> (self, kp, setpoint)</td></tr>
-<tr class="memdesc:aac390fbdf46fc09e2aa29eda413c2f77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="class_closed_loop_1_1_closed_loop.html" title="This class implements a closed loop proportional controller.">ClosedLoop</a> Controller object.  <a href="class_closed_loop_1_1_closed_loop.html#aac390fbdf46fc09e2aa29eda413c2f77">More...</a><br /></td></tr>
-<tr class="separator:aac390fbdf46fc09e2aa29eda413c2f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52d24ccd38a3f776fa5f9d4f7f621d5e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_closed_loop_1_1_closed_loop.html#a52d24ccd38a3f776fa5f9d4f7f621d5e">__init__</a> (self, kp, ki, setpoint)</td></tr>
+<tr class="memdesc:a52d24ccd38a3f776fa5f9d4f7f621d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="class_closed_loop_1_1_closed_loop.html" title="This class implements a closed loop PI controller.">ClosedLoop</a> Controller object.  <a href="class_closed_loop_1_1_closed_loop.html#a52d24ccd38a3f776fa5f9d4f7f621d5e">More...</a><br /></td></tr>
+<tr class="separator:a52d24ccd38a3f776fa5f9d4f7f621d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd403bf1ef8a4843e2f77fb1662ef85b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_closed_loop_1_1_closed_loop.html#afd403bf1ef8a4843e2f77fb1662ef85b">update</a> (self, measured)</td></tr>
 <tr class="memdesc:afd403bf1ef8a4843e2f77fb1662ef85b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the control signal based on the current error.  <a href="class_closed_loop_1_1_closed_loop.html#afd403bf1ef8a4843e2f77fb1662ef85b">More...</a><br /></td></tr>
 <tr class="separator:afd403bf1ef8a4843e2f77fb1662ef85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -85,21 +85,37 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a041a0611599ee9f491098f35e19b1e37"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_closed_loop_1_1_closed_loop.html#a041a0611599ee9f491098f35e19b1e37">change_kp</a> (self, kp)</td></tr>
 <tr class="memdesc:a041a0611599ee9f491098f35e19b1e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the proportional gain value of the controller.  <a href="class_closed_loop_1_1_closed_loop.html#a041a0611599ee9f491098f35e19b1e37">More...</a><br /></td></tr>
 <tr class="separator:a041a0611599ee9f491098f35e19b1e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2c7d69354be1856d4fc67364773805c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_closed_loop_1_1_closed_loop.html#ac2c7d69354be1856d4fc67364773805c">change_ki</a> (self, ki)</td></tr>
+<tr class="memdesc:ac2c7d69354be1856d4fc67364773805c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the integral gain value of the controller.  <a href="class_closed_loop_1_1_closed_loop.html#ac2c7d69354be1856d4fc67364773805c">More...</a><br /></td></tr>
+<tr class="separator:ac2c7d69354be1856d4fc67364773805c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cbb00b31bb8416ff7285ee6bc4ec444"><td class="memItemLeft" align="right" valign="top"><a id="a8cbb00b31bb8416ff7285ee6bc4ec444"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_closed_loop_1_1_closed_loop.html#a8cbb00b31bb8416ff7285ee6bc4ec444">reset_time</a> (self)</td></tr>
+<tr class="memdesc:a8cbb00b31bb8416ff7285ee6bc4ec444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the time used to track integral control. <br /></td></tr>
+<tr class="separator:a8cbb00b31bb8416ff7285ee6bc4ec444"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a580312c3dcba97f344d2740c2fe8fdc9"><td class="memItemLeft" align="right" valign="top"><a id="a580312c3dcba97f344d2740c2fe8fdc9"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>kp</b></td></tr>
 <tr class="separator:a580312c3dcba97f344d2740c2fe8fdc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a50cbba8cb83f93d434e8f7545b2d5"><td class="memItemLeft" align="right" valign="top"><a id="a49a50cbba8cb83f93d434e8f7545b2d5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ki</b></td></tr>
+<tr class="separator:a49a50cbba8cb83f93d434e8f7545b2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef508eb118fb231035fab4e419c17856"><td class="memItemLeft" align="right" valign="top"><a id="aef508eb118fb231035fab4e419c17856"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>setpoint</b></td></tr>
 <tr class="separator:aef508eb118fb231035fab4e419c17856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd8282d99be1265a16ab6949d940754"><td class="memItemLeft" align="right" valign="top"><a id="a1fd8282d99be1265a16ab6949d940754"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>total_error</b></td></tr>
+<tr class="separator:a1fd8282d99be1265a16ab6949d940754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf4a9255298c0ed513a346b31bc57107"><td class="memItemLeft" align="right" valign="top"><a id="adf4a9255298c0ed513a346b31bc57107"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>last_time</b></td></tr>
+<tr class="separator:adf4a9255298c0ed513a346b31bc57107"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class implements a closed loop proportional controller. </p>
+<div class="textblock"><p>This class implements a closed loop PI controller. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aac390fbdf46fc09e2aa29eda413c2f77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac390fbdf46fc09e2aa29eda413c2f77">&#9670;&nbsp;</a></span>__init__()</h2>
+<a id="a52d24ccd38a3f776fa5f9d4f7f621d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52d24ccd38a3f776fa5f9d4f7f621d5e">&#9670;&nbsp;</a></span>__init__()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -120,6 +136,12 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ki</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
           <td class="paramname"><em>setpoint</em>&#160;</td>
         </tr>
         <tr>
@@ -130,11 +152,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a <a class="el" href="class_closed_loop_1_1_closed_loop.html" title="This class implements a closed loop proportional controller.">ClosedLoop</a> Controller object. </p>
-<p>Creates a <a class="el" href="class_closed_loop_1_1_closed_loop.html" title="This class implements a closed loop proportional controller.">ClosedLoop</a> Controller object with the given proportional control gain and reference value </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Creates a <a class="el" href="class_closed_loop_1_1_closed_loop.html" title="This class implements a closed loop PI controller.">ClosedLoop</a> Controller object. </p>
+<p>Creates a <a class="el" href="class_closed_loop_1_1_closed_loop.html" title="This class implements a closed loop PI controller.">ClosedLoop</a> Controller object with the given proportional control gain, integral gain, and reference value </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">kp</td><td>Controller proportional gain in [% duty cycle/rad] </td></tr>
-    <tr><td class="paramname">setpoint</td><td>Reference value in rad for the system </td></tr>
+    <tr><td class="paramname">kp</td><td>Controller proportional gain in [% duty cycle/degree] </td></tr>
+    <tr><td class="paramname">ki</td><td>Controller integral gain [% duty cycle-s/degree] </td></tr>
+    <tr><td class="paramname">setpoint</td><td>Reference value in degrees for the system </td></tr>
   </table>
   </dd>
 </dl>
@@ -142,6 +165,42 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac2c7d69354be1856d4fc67364773805c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2c7d69354be1856d4fc67364773805c">&#9670;&nbsp;</a></span>change_ki()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def ClosedLoop.ClosedLoop.change_ki </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ki</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the integral gain value of the controller. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ki</td><td>The new integral gain for the controller [% duty cycle-s/degree] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a041a0611599ee9f491098f35e19b1e37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a041a0611599ee9f491098f35e19b1e37">&#9670;&nbsp;</a></span>change_kp()</h2>
 
@@ -171,7 +230,7 @@ Public Attributes</h2></td></tr>
 <p>Updates the proportional gain value of the controller. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">kp</td><td>The new proportional gain for the controller [% duty cycle/rad] </td></tr>
+    <tr><td class="paramname">kp</td><td>The new proportional gain for the controller [% duty cycle/degree] </td></tr>
   </table>
   </dd>
 </dl>
@@ -207,7 +266,7 @@ Public Attributes</h2></td></tr>
 <p>Updates the setpoint of the controller. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">setpoint</td><td>The new setpoint for the controller [rad] </td></tr>
+    <tr><td class="paramname">setpoint</td><td>The new setpoint for the controller [degree] </td></tr>
   </table>
   </dd>
 </dl>
@@ -241,9 +300,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Updates the control signal based on the current error. </p>
-<p>Implements proportional control and returns the proportional gain times the error (setpoint - actual position) </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Implements PI control and returns the proportional gain times the error (setpoint - actual position) added to the integral gain times an approximation of the integral of the error signal </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">measured</td><td>The current position of the system [rad] to compare to the setpoint </td></tr>
+    <tr><td class="paramname">measured</td><td>The current position of the system [degree] to compare to the setpoint </td></tr>
   </table>
   </dd>
 </dl>
@@ -251,14 +310,14 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/ClosedLoop.py</li>
+<li>src/<a class="el" href="_closed_loop_8py.html">ClosedLoop.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespace_closed_loop.html">ClosedLoop</a></li><li class="navelem"><a class="el" href="class_closed_loop_1_1_closed_loop.html">ClosedLoop</a></li>
+    <li class="navelem"><b>ClosedLoop</b></li><li class="navelem"><a class="el" href="class_closed_loop_1_1_closed_loop.html">ClosedLoop</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
   </ul>
 </div>

@@ -31,9 +31,7 @@ var NAVTREE =
         [ "Task Diagram", "index.html#ss_Task", null ]
       ] ]
     ] ],
-    [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
-    ] ],
+    [ "Test Results", "page1.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -52,8 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_motor_driver_8py.html",
-"task__share_8py.html#a20669bcd5137496d47c279196fd7fbc5"
+"_closed_loop_8py.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

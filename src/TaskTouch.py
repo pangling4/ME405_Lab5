@@ -1,10 +1,11 @@
-''' @file
-    @brief
-    @details
+'''!
+@file
+@brief
+@details
 
-    @author         Philip Pang
-    @author         Matthew Wimberley
-    @date           October 26, 2021
+@author         Philip Pang
+@author         Matthew Wimberley
+@date           October 26, 2021
 '''
 
 import pyb

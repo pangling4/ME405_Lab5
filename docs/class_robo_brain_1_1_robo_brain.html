@@ -76,10 +76,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d724483600f9a3eb507e4e3857a6969"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robo_brain_1_1_robo_brain.html#a0d724483600f9a3eb507e4e3857a6969">__init__</a> (self, joint1loc, joint2loc, joint3loc, alength, blength, c1, c2, c3, dbg_Flag=False)</td></tr>
 <tr class="memdesc:a0d724483600f9a3eb507e4e3857a6969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="class_robo_brain_1_1_robo_brain.html" title="This class facilitates kinematics for a 3 RRR planar parallel robot.">RoboBrain</a> object.  <a href="class_robo_brain_1_1_robo_brain.html#a0d724483600f9a3eb507e4e3857a6969">More...</a><br /></td></tr>
 <tr class="separator:a0d724483600f9a3eb507e4e3857a6969"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e99237e63ff02ff4a39dfdc404dafac"><td class="memItemLeft" align="right" valign="top"><a id="a9e99237e63ff02ff4a39dfdc404dafac"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robo_brain_1_1_robo_brain.html#a9e99237e63ff02ff4a39dfdc404dafac">reset_position</a> (self)</td></tr>
-<tr class="memdesc:a9e99237e63ff02ff4a39dfdc404dafac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the position of the robot to (0,0) at orientation 0. <br /></td></tr>
-<tr class="separator:a9e99237e63ff02ff4a39dfdc404dafac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63722ca7d0623a4a17540f3f1f8387b6"><td class="memItemLeft" align="right" valign="top"><a id="a63722ca7d0623a4a17540f3f1f8387b6"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robo_brain_1_1_robo_brain.html#a63722ca7d0623a4a17540f3f1f8387b6">reset</a> (self)</td></tr>
+<tr class="memdesc:a63722ca7d0623a4a17540f3f1f8387b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the position of the robot to (0,0) at orientation 0. <br /></td></tr>
+<tr class="separator:a63722ca7d0623a4a17540f3f1f8387b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa37cdb58e97f72e2224961d093bff43a"><td class="memItemLeft" align="right" valign="top"><a id="aa37cdb58e97f72e2224961d093bff43a"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robo_brain_1_1_robo_brain.html#aa37cdb58e97f72e2224961d093bff43a">get_position</a> (self)</td></tr>
 <tr class="memdesc:aa37cdb58e97f72e2224961d093bff43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current position of the robot. <br /></td></tr>
@@ -276,14 +276,15 @@ Public Attributes</h2></td></tr>
 <p>Creates a <a class="el" href="class_robo_brain_1_1_robo_brain.html" title="This class facilitates kinematics for a 3 RRR planar parallel robot.">RoboBrain</a> object. </p>
 <p>Creates a <a class="el" href="class_robo_brain_1_1_robo_brain.html" title="This class facilitates kinematics for a 3 RRR planar parallel robot.">RoboBrain</a> object by saving relevant geometric parameters and initializing all location variables </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">joint1loc</td><td>A column or row vector (list) of floats describing the (x, y) location of joint 1 relative to the universal coordinate frame origin. Ex: joint1loc = [5.33, 2.4] Units are expected to be in inches? </td></tr>
-    <tr><td class="paramname">joint2loc</td><td>A column or row vector (list) of floats describing the (x, y) location of joint 2 relative to the universal coordinate frame origin in units of inches? </td></tr>
-    <tr><td class="paramname">joint3loc</td><td>A column or row vector (list) of floats describing the (x, y) location of joint 3 relative to the universal coordinate frame origin in units of inches? </td></tr>
+    <tr><td class="paramname">joint1loc</td><td>A column or row vector (list) of floats describing the (x, y) location of joint 1 relative to the universal coordinate frame origin. Ex: joint1loc = [5.33, 2.4] Units are expected to be in inches </td></tr>
+    <tr><td class="paramname">joint2loc</td><td>A column or row vector (list) of floats describing the (x, y) location of joint 2 relative to the universal coordinate frame origin in units of inches </td></tr>
+    <tr><td class="paramname">joint3loc</td><td>A column or row vector (list) of floats describing the (x, y) location of joint 3 relative to the universal coordinate frame origin in units of inches </td></tr>
     <tr><td class="paramname">alength</td><td>The length of the driven arm for each joint. If alength is a single value, it is assumed that each link is symmetrical. If alength is a list, <a class="el" href="class_robo_brain_1_1_robo_brain.html" title="This class facilitates kinematics for a 3 RRR planar parallel robot.">RoboBrain</a> will assume the a lengths are given as [a1, a2, a3]. Units are expected to be in inches, type float </td></tr>
     <tr><td class="paramname">blength</td><td>The length of the passive arm for each joint. If blength is a single value, it is assumed that each link is symmetrical. If blength is a list, <a class="el" href="class_robo_brain_1_1_robo_brain.html" title="This class facilitates kinematics for a 3 RRR planar parallel robot.">RoboBrain</a> will assume the a lengths are given as [b1, b2, b3]. Units are expected to be in inches, type float </td></tr>
     <tr><td class="paramname">c1</td><td>A column or row vector (list) of floats describing the (x, y) location of attachment point C1 relative to the center of the moving platform P when the robot is in the reset position. Units are expected in inches </td></tr>
     <tr><td class="paramname">c2</td><td>A column or row vector (list) of floats describing the (x, y) location of attachment point C2 relative to the center of the moving platform P when the robot is in the reset position. Units are expected in inches </td></tr>
     <tr><td class="paramname">c3</td><td>A column or row vector (list) of floats describing the (x, y) location of attachment point C3 relative to the center of the moving platform P when the robot is in the reset position. Units are expected in inches </td></tr>
+    <tr><td class="paramname">dbg_Flag</td><td>A flag used to turn on/off debug mode </td></tr>
   </table>
   </dd>
 </dl>
@@ -493,14 +494,14 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/RoboBrain.py</li>
+<li>src/<a class="el" href="_robo_brain_8py.html">RoboBrain.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespace_robo_brain.html">RoboBrain</a></li><li class="navelem"><a class="el" href="class_robo_brain_1_1_robo_brain.html">RoboBrain</a></li>
+    <li class="navelem"><b>RoboBrain</b></li><li class="navelem"><a class="el" href="class_robo_brain_1_1_robo_brain.html">RoboBrain</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
   </ul>
 </div>

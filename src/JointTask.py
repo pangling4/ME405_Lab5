@@ -1,12 +1,13 @@
-''' @file       JointTask.py
-    @brief      Implements motor, encoder, and controller to control joints
-    @details    Creates a motor driver, encoder, and closed loop controller corresponding to
-                a joint on the 3RRR planar parallel robot. The run function is used by
-                the cotask scheduler to control the motion of each joint
-    @author     Jonathan Cederquist
-    @author     Tim Jain
-    @author     Philip Pang
-    @date       Last Modified 3/5/22
+'''!
+@file       JointTask.py
+@brief      Implements motor, encoder, and controller to control joints
+@details    Creates a motor driver, encoder, and closed loop controller corresponding to
+            a joint on the 3RRR planar parallel robot. The run function is used by
+            the cotask scheduler to control the motion of each joint
+@author     Jonathan Cederquist
+@author     Tim Jain
+@author     Philip Pang
+@date       Last Modified 3/5/22
 '''
 
 import pyb

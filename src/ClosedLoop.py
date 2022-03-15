@@ -1,12 +1,13 @@
-''' @file       ClosedLoop.py
-    @brief      Implements closed loop PI controller on motor position
-    @details    Class of closed loop controller that can be used to control motors given in ME 405 lab
-                with NUCLEO L476RG microcontroller
-                
-    @author     Jonathan Cederquist
-    @author     Tim Jain
-    @author     Philip Pang
-    @date       Last Modified 3/2/22
+'''!
+@file       ClosedLoop.py
+@brief      Implements closed loop PI controller on motor position
+@details    Class of closed loop controller that can be used to control motors given in ME 405 lab
+            with NUCLEO L476RG microcontroller
+            
+@author     Jonathan Cederquist
+@author     Tim Jain
+@author     Philip Pang
+@date       Last Modified 3/2/22
 '''
 
 import pyb

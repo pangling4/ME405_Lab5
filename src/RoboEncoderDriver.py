@@ -1,11 +1,12 @@
-''' @file       RoboEncoderDriver.py
-    @brief      Used to read from encoders attached to motors (No. GB37Y3530-12V-83R)
-    @details    Utilizes alternate functions from timer channels on pyb board to 
-                read from attached encoders
-    @author     Jonathan Cederquist
-    @author     Tim Jain
-    @author     Philip Pang
-    @date       Last Modified 3/3/22
+'''!
+@file       RoboEncoderDriver.py
+@brief      Used to read from encoders attached to motors (No. GB37Y3530-12V-83R)
+@details    Utilizes alternate functions from timer channels on pyb board to 
+            read from attached encoders
+@author     Jonathan Cederquist
+@author     Tim Jain
+@author     Philip Pang
+@date       Last Modified 3/3/22
 '''
 
 import pyb

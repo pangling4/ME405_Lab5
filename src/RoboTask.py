@@ -1,12 +1,13 @@
-''' @file       RoboTask.py
-    @brief      Facilitates multitasking with for the RoboBrain
-    @details    Contains a FSM which controls the operation of a parallel 3RRR
-                robot. The run method is used by the cotask scheduler to continuously
-                update the desired angles from the inverse kinematics
-    @author     Jonathan Cederquist
-    @author     Tim Jain
-    @author     Philip Pang
-    @date       Last Modified 3/7/22
+'''!
+@file       RoboTask.py
+@brief      Facilitates multitasking with for the RoboBrain
+@details    Contains a FSM which controls the operation of a parallel 3RRR
+            robot. The run method is used by the cotask scheduler to continuously
+            update the desired angles from the inverse kinematics
+@author     Jonathan Cederquist
+@author     Tim Jain
+@author     Philip Pang
+@date       Last Modified 3/7/22
 '''
 
 S0_INIT = 0

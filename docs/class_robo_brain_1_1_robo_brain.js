@@ -8,7 +8,7 @@ var class_robo_brain_1_1_robo_brain =
     [ "get_theta", "class_robo_brain_1_1_robo_brain.html#a7531fe3fe5adff0453646b2095411ae6", null ],
     [ "get_x", "class_robo_brain_1_1_robo_brain.html#a37f37bf12812853ff6ced2d7b0b1b988", null ],
     [ "get_y", "class_robo_brain_1_1_robo_brain.html#ade77180e2efc0ce1d67139cdb10867ed", null ],
-    [ "reset_position", "class_robo_brain_1_1_robo_brain.html#a9e99237e63ff02ff4a39dfdc404dafac", null ],
+    [ "reset", "class_robo_brain_1_1_robo_brain.html#a63722ca7d0623a4a17540f3f1f8387b6", null ],
     [ "set_position", "class_robo_brain_1_1_robo_brain.html#a0ccf00d9eac0439ab105ca0e3ac87335", null ],
     [ "set_theta", "class_robo_brain_1_1_robo_brain.html#afc25cde075baa0f0357fd4cc79f9de36", null ],
     [ "set_x", "class_robo_brain_1_1_robo_brain.html#a49bd92f501c752eac546719ba722b328", null ],

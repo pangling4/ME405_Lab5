@@ -5,14 +5,14 @@ var hierarchy =
       [ "task_share.Share", "classtask__share_1_1_share.html", null ]
     ] ],
     [ "ClosedLoop.ClosedLoop", "class_closed_loop_1_1_closed_loop.html", null ],
-    [ "EncoderDriver.EncoderDriver", "class_encoder_driver_1_1_encoder_driver.html", null ],
-    [ "MotorDriver.MotorDriver", "class_motor_driver_1_1_motor_driver.html", null ],
+    [ "JointTask.JointTask", "class_joint_task_1_1_joint_task.html", null ],
     [ "RoboBrain.RoboBrain", "class_robo_brain_1_1_robo_brain.html", null ],
+    [ "RoboEncoderDriver.RoboEncoderDriver", "class_robo_encoder_driver_1_1_robo_encoder_driver.html", null ],
+    [ "RoboMotorDriver.RoboMotorDriver", "class_robo_motor_driver_1_1_robo_motor_driver.html", null ],
+    [ "RoboSolenoidDriver.RoboSolenoidDriver", "class_robo_solenoid_driver_1_1_robo_solenoid_driver.html", null ],
+    [ "RoboTask.RoboTask", "class_robo_task_1_1_robo_task.html", null ],
     [ "cotask.Task", "classcotask_1_1_task.html", null ],
-    [ "TaskController.TaskController", "class_task_controller_1_1_task_controller.html", null ],
-    [ "TaskEncoder.TaskEncoder", "class_task_encoder_1_1_task_encoder.html", null ],
     [ "cotask.TaskList", "classcotask_1_1_task_list.html", null ],
-    [ "TaskMotor.TaskMotor", "class_task_motor_1_1_task_motor.html", null ],
     [ "TaskTouch.TaskTouch", "class_task_touch_1_1_task_touch.html", null ],
-    [ "TouchDriver.Touch_Panel", "class_touch_driver_1_1_touch___panel.html", null ]
+    [ "TouchDriver.TouchDriver", "class_touch_driver_1_1_touch_driver.html", null ]
 ];

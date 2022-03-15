@@ -1,11 +1,12 @@
-''' @file       RoboBrain.py
-    @brief      Used to coordinate kinematics of 3 RRR robot
-    @details    Implements inverse kinematic equations for a 3 RRR planar
-                parallel robot
-    @author     Jonathan Cederquist
-    @author     Tim Jain
-    @author     Philip Pang
-    @date       Last Modified 2/25/22
+'''!
+@file       RoboBrain.py
+@brief      Used to coordinate kinematics of 3 RRR robot
+@details    Implements inverse kinematic equations for a 3 RRR planar
+            parallel robot
+@author     Jonathan Cederquist
+@author     Tim Jain
+@author     Philip Pang
+@date       Last Modified 2/25/22
 '''
 
 import math
