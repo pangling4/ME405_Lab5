@@ -188,7 +188,10 @@ robot link.
 Part of the challenge on this project for our team was the limited time
 given to complete it. Do not underestimate the time necessary for 
 manufacturing your robot. In addition, it is very helpful to buy or
-make spare parts for your robot, since you never know when a screw head
+make spare parts for your robot, since you never know when your epoxy connection will 
+shear off and you will need to take 45 minutes to use a tiny 1/2" thick hacksaw
+blade to gnaw away a stripped shoulder bolt at 1 am the night before it is due.
+Other complications could be that a screw head
 will strip, or glue will come loose, or other issue will occur that requires a
 replacement. Software can be updated and improved (relatively) easily,
 requiring only time to debug and test. On the other hand, updating or
