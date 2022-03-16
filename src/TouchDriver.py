@@ -35,10 +35,11 @@ class TouchDriver:
         
         '''!
             @brief       instantiates touch panel pins
-            @details     adjusts scaling using 2^12 total count
-            @param       the four push pins
-            @param       touch panel dimensions
-            @param       origin offset to calibrate the panel's center
+
+            @param  Pin_xp    high side pin to read from and send current to in x-direction
+            @param  Pin_xm    low side pin to read from and send current to in x-direction
+            @param  Pin_yp    high side pin to read from and send current to in y-direction
+            @param  Pin_ym    low side pin to read from and send current to in y-direction
            '''
            
         self.Pin_xp = Pin_xp
@@ -172,7 +173,7 @@ class TouchDriver:
 
 if __name__ == "__main__":
 
-    '''@brief            instantiates touch panel attributes pin setup, panel dimensions, and origin offset
+    '''@brief tests touch panel driver
     '''
     panel = TouchDriver(Pin.cpu.C3, Pin.cpu.C0, Pin.cpu.C2, Pin.cpu.B0)
     panel.calibrate()
