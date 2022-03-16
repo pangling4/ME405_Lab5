@@ -47,7 +47,7 @@ the products are sourced from.
 |  1   | 2'x 2' Particle Board Base Plate    | Home Depot            |    $4.23   |
 |  15  | 1/4" Zinc Flat Washer               | Home Depot            |    $2.40   |
 |  10  | 1/4-20 Zinc Hex Nut                 | Home Depot            |    $1.28   |
-|  3   | Include 6mm Shaft Collars?          | McMaster Carr         |    $5.31   |
+|  3   | 6mm Set-Screw Shaft Collar 6056N14  | McMaster Carr         |    $5.31   |
 |  6   | 5/16" Needle-Roller Thrust Bearing  | McMaster Carr         |   $19.14   |
 |  6   | 5/16" Shoulder Screw                | McMaster Carr         |    $8.52   |
 |  3   | 12V Motor w/Encoder, 131 Gear Ratio | DFRobot               |   $87.00   |
