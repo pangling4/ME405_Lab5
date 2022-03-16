@@ -19,8 +19,10 @@ import os
 
 class TouchDriver:
     
-    '''@brief       sets up pin read out values for xyz scanner
-       @details     takes in each pin and board dimensions to set up origin'''
+    '''!
+        @brief       sets up pin read out values for xyz scanner
+        @details     takes in each pin and board dimensions to set up origin
+    '''
 
     k_xx = 170/4095
     k_xy = 0
@@ -31,11 +33,12 @@ class TouchDriver:
 
     def __init__(self, Pin_xp, Pin_xm, Pin_yp, Pin_ym):
         
-        '''@brief       instantiates touch panel pins
-           @details     adjusts scaling using 2^12 total count
-           @param       the four push pins
-           @param       touch panel dimensions
-           @param       origin offset to calibrate the panel's center
+        '''!
+            @brief       instantiates touch panel pins
+            @details     adjusts scaling using 2^12 total count
+            @param       the four push pins
+            @param       touch panel dimensions
+            @param       origin offset to calibrate the panel's center
            '''
            
         self.Pin_xp = Pin_xp
