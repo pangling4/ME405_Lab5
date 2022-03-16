@@ -4,24 +4,11 @@
 @details         If there is pressure on the screen (i.e. touch), current is allowed to pass
                 through the resistors leading to a voltage drop measured across the board's 
                 pins.
-                Source code found here:
-                https://bitbucket.org/wimberle/me305_labs/src/master/305_Term_Project/Touch_Panel.py
+
 @author          Philip Pang
 @author          Matthew Wimberley
 @date            November 16, 2021      
-@page            page1 Test Results
-                Our testing procedure went very smoothly. We first ran our finger on the touch panel
-                to find the positive direction for the panel. Knowing the direction, we now know which 
-                way to offset the coordinates so that (0,0) reads the center of the touch panel. Now
-                that the center is found, we are able to receive values in a coordinate grid. We then 
-                ran our code in a loop calculating the time to run after every time we touched the panel.
-                
-                Our first run through took around 900 microseconds. We then moved the uticks_diff 
-                calculation outside of our print statement saving us around 30 micro seconds. In the end,
-                we are consistently able to read our coordinates in about 830 microseconds.
-                
-@image           html   ME305-Term_Project_Benchmark.png     "Touch Panel Benchmark"     width = 600px
-@image           html   IMG_3135.png                         "Hardware Setup"            width = 600px
+
 '''   
 
 from pyb import Pin, ADC

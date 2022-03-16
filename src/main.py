@@ -1,15 +1,17 @@
 """!
 @file main.py
-@brief This file contains tasks to control the operation of a parallel 3RRR drawing robot for ME 405
+@brief This file creates and runs all task objects to control the operation of a parallel 3RRR
+drawing robot for ME 405.
+@details All shared communication variables between tasks in the form of shares and queues are created here.
+This is the script to run the 3RRR robot while prompting user in the console for start and stop commands.
     
 @author Jonathan Cederquist
 @author Tim Jain
 @author Philip Pang
-@date   Last Modified 2/3/22
+@date   Last Modified 3/15/22
 """
 
 import gc
-# import pyb
 import math
 import utime
 import cotask
@@ -83,8 +85,13 @@ if __name__ == "__main__":
                 
         except KeyboardInterrupt:
             print("End Program")
+            # set ready shared variable to low (false)
             ready.put(0)
+            # wait for one period of all tasks being run
             utime.sleep_ms(50)
+            
+            # run joint (which command the motors) and brain (which command the solenoid) tasks
+            # so they can turn the motors and solenoids off when shutting robot down.
             task1_J1.schedule()
             task2_J2.schedule()
             task3_J3.schedule()

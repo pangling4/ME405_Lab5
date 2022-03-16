@@ -80,16 +80,6 @@ class RoboTask:
                 self.theta3_queue.clear()
                 state = S3_DRAW
             
-            elif state == S1_CALIBRATE_TP:
-                # Run touchpad calibration method
-                # If touchpad is calibrated, transition to S2
-                pass
-            
-            elif state == S2_CALIBRATE_MOT:
-                # Run motor calibration method for each motor
-                # If motors are calibrated, transition to S3
-                pass
-            
             elif state == S3_DRAW:
                 if self.ready.get() == 0:
                     self.solenoid.push_down()
