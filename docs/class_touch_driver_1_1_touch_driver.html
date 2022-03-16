@@ -68,10 +68,14 @@ $(document).ready(function(){initNavTree('class_touch_driver_1_1_touch_driver.ht
 <div class="title">TouchDriver.TouchDriver Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>sets up pin read out values for xyz scanner  
+ <a href="class_touch_driver_1_1_touch_driver.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5ffabb9762f9d22ab8948d2877872504"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_touch_driver_1_1_touch_driver.html#a5ffabb9762f9d22ab8948d2877872504">__init__</a> (self, Pin_xp, Pin_xm, Pin_yp, Pin_ym)</td></tr>
+<tr class="memdesc:a5ffabb9762f9d22ab8948d2877872504"><td class="mdescLeft">&#160;</td><td class="mdescRight">instantiates touch panel pins  <a href="class_touch_driver_1_1_touch_driver.html#a5ffabb9762f9d22ab8948d2877872504">More...</a><br /></td></tr>
 <tr class="separator:a5ffabb9762f9d22ab8948d2877872504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a007532fcc2e765ef951d9a2c92745991"><td class="memItemLeft" align="right" valign="top"><a id="a007532fcc2e765ef951d9a2c92745991"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>xy_scan</b> (self)</td></tr>
@@ -143,8 +147,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>y_offset</b> = -58</td
 <tr class="separator:aae76fced7f64b06e98ebf1d3e6024db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">@brief       sets up pin read out values for xyz scanner
-   @details     takes in each pin and board dimensions to set up origin</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p>sets up pin read out values for xyz scanner </p>
+<p>takes in each pin and board dimensions to set up origin </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5ffabb9762f9d22ab8948d2877872504"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ffabb9762f9d22ab8948d2877872504">&#9670;&nbsp;</a></span>__init__()</h2>
 
@@ -188,11 +193,17 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>y_offset</b> = -58</td
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@brief       instantiates touch panel pins
-   @details     adjusts scaling using 2^12 total count
-   @param       the four push pins
-   @param       touch panel dimensions
-   @param       origin offset to calibrate the panel's center</pre> 
+
+<p>instantiates touch panel pins </p>
+<p>adjusts scaling using 2^12 total count </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">the</td><td>four push pins </td></tr>
+    <tr><td class="paramname">touch</td><td>panel dimensions </td></tr>
+    <tr><td class="paramname">origin</td><td>offset to calibrate the panel's center </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>

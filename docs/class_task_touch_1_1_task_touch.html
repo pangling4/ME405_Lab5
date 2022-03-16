@@ -67,10 +67,14 @@ $(document).ready(function(){initNavTree('class_task_touch_1_1_task_touch.html',
 <div class="title">TaskTouch.TaskTouch Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>instantiates self object of Touch Panel tasks  
+ <a href="class_task_touch_1_1_task_touch.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad6b69caa49255ee55637a101d5385cdc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_task_touch_1_1_task_touch.html#ad6b69caa49255ee55637a101d5385cdc">__init__</a> (self, ready, touchpad_x, touchpad_y)</td></tr>
+<tr class="memdesc:ad6b69caa49255ee55637a101d5385cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns shared communication variables to be accessible locally and instantiates touch panel driver for touch panel interfacing.  <a href="class_task_touch_1_1_task_touch.html#ad6b69caa49255ee55637a101d5385cdc">More...</a><br /></td></tr>
 <tr class="separator:ad6b69caa49255ee55637a101d5385cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab55ebb686106b5bd68380feae77f173c"><td class="memItemLeft" align="right" valign="top"><a id="ab55ebb686106b5bd68380feae77f173c"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> (self)</td></tr>
@@ -92,7 +96,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a235c212105729530d4b9170de7f63ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">@brief       instantiates self object of Touch Panel tasks</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p>instantiates self object of Touch Panel tasks </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad6b69caa49255ee55637a101d5385cdc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad6b69caa49255ee55637a101d5385cdc">&#9670;&nbsp;</a></span>__init__()</h2>
 
@@ -130,15 +135,17 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@brief Assigns shared communication variables to be accessible locally and instantiates
-        touch panel driver for touch panel interfacing.
-   @param ready        The task_share.Share corresponding to whether or not the touchpanel
-                       should be recording data because the robot is READY to draw
-   @param touchpad_x   The task_share.Queue corresponding to x_coordinate in inches on the
-                       coordinate system of the drawing area of the 3RRR robot
-   @param touchpad_y   The task_share.Queue corresponding to y_coordinate in inches on the
-                       coordinate system of the drawing area of the 3RRR robot
-</pre> 
+
+<p>Assigns shared communication variables to be accessible locally and instantiates touch panel driver for touch panel interfacing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ready</td><td>The <a class="el" href="classtask__share_1_1_share.html" title="An item which holds data to be shared between tasks.">task_share.Share</a> corresponding to whether or not the touchpanel should be recording data because the robot is READY to draw </td></tr>
+    <tr><td class="paramname">touchpad_x</td><td>The <a class="el" href="classtask__share_1_1_queue.html" title="A queue which is used to transfer data from one task to another.">task_share.Queue</a> corresponding to x_coordinate in inches on the coordinate system of the drawing area of the 3RRR robot </td></tr>
+    <tr><td class="paramname">touchpad_y</td><td>The <a class="el" href="classtask__share_1_1_queue.html" title="A queue which is used to transfer data from one task to another.">task_share.Queue</a> corresponding to y_coordinate in inches on the coordinate system of the drawing area of the 3RRR robot </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
