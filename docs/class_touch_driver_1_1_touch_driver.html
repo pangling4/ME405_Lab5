@@ -81,15 +81,21 @@ Public Member Functions</h2></td></tr>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>xy_scan</b> (self)</td></tr>
 <tr class="separator:a007532fcc2e765ef951d9a2c92745991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7edfc76b3025bf11cad73946a4795fb6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_touch_driver_1_1_touch_driver.html#a7edfc76b3025bf11cad73946a4795fb6">x_scan</a> (self)</td></tr>
+<tr class="memdesc:a7edfc76b3025bf11cad73946a4795fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">instantiates x axis pins  <a href="class_touch_driver_1_1_touch_driver.html#a7edfc76b3025bf11cad73946a4795fb6">More...</a><br /></td></tr>
 <tr class="separator:a7edfc76b3025bf11cad73946a4795fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17d2fa64d0a914cf7cf6d15c67b2b87e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_touch_driver_1_1_touch_driver.html#a17d2fa64d0a914cf7cf6d15c67b2b87e">y_scan</a> (self)</td></tr>
+<tr class="memdesc:a17d2fa64d0a914cf7cf6d15c67b2b87e"><td class="mdescLeft">&#160;</td><td class="mdescRight">instantiates y axis pins  <a href="class_touch_driver_1_1_touch_driver.html#a17d2fa64d0a914cf7cf6d15c67b2b87e">More...</a><br /></td></tr>
 <tr class="separator:a17d2fa64d0a914cf7cf6d15c67b2b87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79fe24469c358861cc744028745bd15a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_touch_driver_1_1_touch_driver.html#a79fe24469c358861cc744028745bd15a">z_scan</a> (self)</td></tr>
+<tr class="memdesc:a79fe24469c358861cc744028745bd15a"><td class="mdescLeft">&#160;</td><td class="mdescRight">instantiates z axis pins  <a href="class_touch_driver_1_1_touch_driver.html#a79fe24469c358861cc744028745bd15a">More...</a><br /></td></tr>
 <tr class="separator:a79fe24469c358861cc744028745bd15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6853f1076572054ac08d87d5f6b839fb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_touch_driver_1_1_touch_driver.html#a6853f1076572054ac08d87d5f6b839fb">scan_all</a> (self)</td></tr>
+<tr class="memitem:a6853f1076572054ac08d87d5f6b839fb"><td class="memItemLeft" align="right" valign="top"><a id="a6853f1076572054ac08d87d5f6b839fb"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_touch_driver_1_1_touch_driver.html#a6853f1076572054ac08d87d5f6b839fb">scan_all</a> (self)</td></tr>
+<tr class="memdesc:a6853f1076572054ac08d87d5f6b839fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">scans all three coordinates simultaneously <br /></td></tr>
 <tr class="separator:a6853f1076572054ac08d87d5f6b839fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ab6d4d34912944d6a659486cf070e2e"><td class="memItemLeft" align="right" valign="top"><a id="a7ab6d4d34912944d6a659486cf070e2e"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>calibrate</b> (self)</td></tr>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_touch_driver_1_1_touch_driver.html#a7ab6d4d34912944d6a659486cf070e2e">calibrate</a> (self)</td></tr>
+<tr class="memdesc:a7ab6d4d34912944d6a659486cf070e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">calibrates the touchpad using preloaded file having user touch points <br /></td></tr>
 <tr class="separator:a7ab6d4d34912944d6a659486cf070e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -195,11 +201,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>y_offset</b> = -58</td
 </div><div class="memdoc">
 
 <p>instantiates touch panel pins </p>
-<p>adjusts scaling using 2^12 total count </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>four push pins </td></tr>
-    <tr><td class="paramname">touch</td><td>panel dimensions </td></tr>
-    <tr><td class="paramname">origin</td><td>offset to calibrate the panel's center </td></tr>
+    <tr><td class="paramname">Pin_xp</td><td>high side pin to read from and send current to in x-direction </td></tr>
+    <tr><td class="paramname">Pin_xm</td><td>low side pin to read from and send current to in x-direction </td></tr>
+    <tr><td class="paramname">Pin_yp</td><td>high side pin to read from and send current to in y-direction </td></tr>
+    <tr><td class="paramname">Pin_ym</td><td>low side pin to read from and send current to in y-direction </td></tr>
   </table>
   </dd>
 </dl>
@@ -207,25 +214,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>y_offset</b> = -58</td
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6853f1076572054ac08d87d5f6b839fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6853f1076572054ac08d87d5f6b839fb">&#9670;&nbsp;</a></span>scan_all()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def TouchDriver.TouchDriver.scan_all </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">@brief       scans all three coordinates simultaneously
-</pre> 
-</div>
-</div>
 <a id="a7edfc76b3025bf11cad73946a4795fb6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7edfc76b3025bf11cad73946a4795fb6">&#9670;&nbsp;</a></span>x_scan()</h2>
 
@@ -241,11 +229,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>y_offset</b> = -58</td
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@brief       instantiates x axis pins
-   @details     2 outputs correspond to the pin resistor set up
-                1 output is set up for the voltage read out and the 
-                forth pin is the input delivering the floating contact.
-   @param       self</pre> 
+
+<p>instantiates x axis pins </p>
+<p>2 outputs correspond to the pin resistor set up 1 output is set up for the voltage read out and the forth pin is the input delivering the floating contact. </p>
+
 </div>
 </div>
 <a id="a17d2fa64d0a914cf7cf6d15c67b2b87e"></a>
@@ -263,11 +250,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>y_offset</b> = -58</td
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@brief       instantiates y axis pins
-   @details     2 outputs correspond to the pin resistor set up
-                1 output is set up for the voltage read out and the 
-                forth pin is the input delivering the floating contact.
-   @param       self</pre> 
+
+<p>instantiates y axis pins </p>
+<p>2 outputs correspond to the pin resistor set up 1 output is set up for the voltage read out and the forth pin is the input delivering the floating contact. </p>
+
 </div>
 </div>
 <a id="a79fe24469c358861cc744028745bd15a"></a>
@@ -285,14 +271,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>y_offset</b> = -58</td
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@brief       instantiates z axis pins
-   @details     2 outputs correspond to the pin resistor set up
-                1 output is set up for the voltage read out and the 
-                forth pin is the input delivering the floating contact.
-                This scan returns true if the ball is making contact with
-                the touch panel.
-   @param       self
-</pre> 
+
+<p>instantiates z axis pins </p>
+<p>2 outputs correspond to the pin resistor set up 1 output is set up for the voltage read out and the forth pin is the input delivering the floating contact. This scan returns true if the ball is making contact with the touch panel. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

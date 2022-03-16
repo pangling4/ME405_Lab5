@@ -66,37 +66,38 @@ class TouchDriver:
 
     def x_scan(self):
         
-        '''@brief       instantiates x axis pins
-           @details     2 outputs correspond to the pin resistor set up
+        '''!
+            @brief       instantiates x axis pins
+            @details     2 outputs correspond to the pin resistor set up
                         1 output is set up for the voltage read out and the 
                         forth pin is the input delivering the floating contact.
-           @param       self
-           '''
+        '''
            
         ADC = self.xy_scan()
         return ADC[0] * self.k_xx + ADC[1] * self.k_xy + self.x_offset
         
     def y_scan(self):
         
-        '''@brief       instantiates y axis pins
-           @details     2 outputs correspond to the pin resistor set up
+        '''!
+            @brief       instantiates y axis pins
+            @details     2 outputs correspond to the pin resistor set up
                         1 output is set up for the voltage read out and the 
                         forth pin is the input delivering the floating contact.
-           @param       self
-           '''
+
+        '''
            
         ADC = self.xy_scan()
         return ADC[0] * self.k_yx + ADC[1] * self.k_yy + self.y_offset
         
     def z_scan(self):
         
-        '''@brief       instantiates z axis pins
-           @details     2 outputs correspond to the pin resistor set up
+        '''!
+            @brief       instantiates z axis pins
+            @details     2 outputs correspond to the pin resistor set up
                         1 output is set up for the voltage read out and the 
                         forth pin is the input delivering the floating contact.
                         This scan returns true if the ball is making contact with
                         the touch panel.
-           @param       self
         '''
         
         yp = Pin(self.Pin_yp, Pin.OUT_PP)
@@ -109,7 +110,8 @@ class TouchDriver:
     
     def scan_all(self):
         
-        '''@brief       scans all three coordinates simultaneously
+        '''!
+            @brief       scans all three coordinates simultaneously
         '''
         ADC = self.xy_scan()
         return ( ADC[0] * self.k_xx + ADC[1] * self.k_xy + self.x_offset,
@@ -117,6 +119,10 @@ class TouchDriver:
                  self.z_scan())
 
     def calibrate(self):
+        '''!
+            @brief calibrates the touchpad using preloaded file having user touch points
+        '''
+        
         print("CALIBRATING TOUCH SCREEN.\n")
 
         filename = "RT_cal_coeffs.txt"
@@ -173,7 +179,8 @@ class TouchDriver:
 
 if __name__ == "__main__":
 
-    '''@brief tests touch panel driver
+    '''!
+        @brief tests touch panel driver
     '''
     panel = TouchDriver(Pin.cpu.C3, Pin.cpu.C0, Pin.cpu.C2, Pin.cpu.B0)
     panel.calibrate()
