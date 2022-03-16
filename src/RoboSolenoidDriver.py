@@ -1,5 +1,5 @@
 """!
-@file RoboSolenoidDriver.py
+@file roboSolenoidDriver.py
 This solenoid driver utilizes the DRI0039 MotorDriver shield from DFRobot which
 uses two TB6612FNG driver circuits to be able to control up to 4 motors. This
 class is designed for use along with the Nucleo L476RG microcontroller to control

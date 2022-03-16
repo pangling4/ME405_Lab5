@@ -1,5 +1,5 @@
 '''!
-@file       ClosedLoop.py
+@file       closedLoop.py
 @brief      Implements closed loop PI controller on motor position
 @details    Class of closed loop controller that can be used to control motors given in ME 405 lab
             with NUCLEO L476RG microcontroller

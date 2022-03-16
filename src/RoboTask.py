@@ -1,5 +1,5 @@
 '''!
-@file       RoboTask.py
+@file       roboTask.py
 @brief      Facilitates multitasking with for the RoboBrain
 @details    Contains a FSM which controls the operation of a parallel 3RRR
             robot. The run method is used by the cotask scheduler to continuously

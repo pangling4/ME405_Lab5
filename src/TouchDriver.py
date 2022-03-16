@@ -1,5 +1,5 @@
 '''!
-@file            Touch_Panel.py
+@file            touch_Panel.py
 @brief           Controls the touch panel of the 3RRR robot which is designed to imitate and
                 draw whenever and wherever the user touches the panel
 @details         If there is pressure on the screen (i.e. touch), current is allowed to pass

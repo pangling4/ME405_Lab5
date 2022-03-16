@@ -1,5 +1,5 @@
 '''!
-@file     TaskTouch.py
+@file     taskTouch.py
 @brief    This file interfaces with the touchpanel that the 3RRR robot reads coordinate data from.
 @details  This task determines if the touchpanel is being touched and if it is, it adds coordinates
           to a queue for the RoboTask to process using the RoboBrain to determine appropriate motor angles. 

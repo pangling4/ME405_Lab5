@@ -1,5 +1,5 @@
 '''!
-@file       RoboBrain.py
+@file       roboBrain.py
 @brief      Used to coordinate kinematics of 3 RRR robot
 @details    Implements inverse kinematic equations for a 3 RRR planar
             parallel robot

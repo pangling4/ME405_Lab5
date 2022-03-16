@@ -1,5 +1,5 @@
 '''!
-@file       RoboEncoderDriver.py
+@file       roboEncoderDriver.py
 @brief      Used to read from encoders attached to motors (No. GB37Y3530-12V-83R)
 @details    Utilizes alternate functions from timer channels on pyb board to 
             read from attached encoders

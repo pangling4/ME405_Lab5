@@ -1,5 +1,5 @@
 """!
-@file RoboMotorDriver.py
+@file roboMotorDriver.py
 This motor driver utilizes the DRI0039 MotorDriver shield from DFRobot which
 uses two TB6612FNG driver circuits to be able to cotnrol up to 4 motors. This
 class is designed for use along with the Nucleo L476RG microcontroller with PWM
