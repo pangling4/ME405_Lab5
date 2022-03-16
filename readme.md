@@ -51,9 +51,9 @@ the products are sourced from.
 |  6   | 5/16" Needle-Roller Thrust Bearing  | McMaster Carr         |   $19.14   |
 |  6   | 5/16" Shoulder Screw                | McMaster Carr         |    $8.52   |
 |  3   | 12V Motor w/Encoder, 131 Gear Ratio | DFRobot               |   $87.00   |
-|  1   | 12 VDC Open Frame Pull Solenoid     | Chaocheng Technology  |    $?      |
-|  3   | Limit Switch                        | Amazon                |    $?      |
-|  3?  | Ball transfers                      | Amazon                |    $?      |
+|  1   | 12 VDC Open Frame Pull Solenoid     | Chaocheng Technology  |   $13.81   |
+|  3   | MUZHI SPDT1NO Mtl Roller Lim Switch | Amazon                |    $1.83   |
+|  3   | CHUANGRONG-US 1/3" SS Ball transfers| Amazon                |    $7.17   |
 
 ### Electronic Components
 This project was built around the STM32 Nucleo L476RG microcontroller,
