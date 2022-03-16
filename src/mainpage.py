@@ -6,11 +6,13 @@
 # @image html 3R_FSM_Touch.drawio.png Finite State Diagram
 # The finite state machine first involves calibration. Before calibrating,
 # the RoboTask is initialized and also activates the solenoid, lifting up the
-# pen. Next is the touch screen calibration. If a calibration file exists, then
+# pen.
+# S1 state is the touch screen calibration. If a calibration file exists, then
 # the calibration procedure does not need to be performed. If not, the procedure
 # is done by touching the touch pad at set points and calculating angle and
-# scale biases that those that the touches might reveal. Then, the FSM transitions
-# to calibrating the motors. A message is shown in the console to prompt the
+# scale biases that those that the touches might reveal.
+# 
+# S2 state calibrates the motors. A message is shown in the console to prompt the
 # user to manually move the linkages of the robot, one arm at a time. The limit
 # switch will run over a ramp once in an arbitrary direction and back over a
 # second time in the opposite direction. The calibration code will read these
@@ -19,15 +21,22 @@
 # Finally, all communication queues that contain touch tracking and position data
 # are cleared.
 # 
-# In the second state, the drawing executes if the robot is ready and if contact
-# is made on the touch panel.
-# When it touches the paper as the user is touching the touch pad, the drawing
+# S3 state the drawing executes if the robot is ready and if contact
+# is made on the touch panel. In this state, the solenoid is deactivated and the
+# pen is lowered to commence drawing.
+#
+# S4 When it touches the paper as the user is touching the touch pad, the drawing
 # sequence is performed, letting the pen down to draw and moving the links based
 # on the inverse kinematics of 
 # the robot task, and moving the motors at appropriate speeds based on closed 
-# loop control. When the user removes their finger from the touch pad, the 
+# loop control.
+# 
+# S5 When the user removes their finger from the touch pad, the 
 # solenoid pulls, raising the pen. States 1 and 2 are repeated until the 
 # program is halted.
+#
+# States S3, S4, and S5 are looped as the touch panel is touched and not touched.
+# 
 # @subsection ss_Task Task Diagram
 # We decided to combine the motor, encoder, and closed loop controller tasks
 # within one task for each motor system. This creates three tasks, in which the 
