@@ -1,39 +1,39 @@
 var annotated_dup =
 [
-    [ "ClosedLoop", null, [
-      [ "ClosedLoop", "class_closed_loop_1_1_closed_loop.html", "class_closed_loop_1_1_closed_loop" ]
+    [ "closedLoop", null, [
+      [ "ClosedLoop", "classclosed_loop_1_1_closed_loop.html", "classclosed_loop_1_1_closed_loop" ]
     ] ],
     [ "cotask", null, [
       [ "Task", "classcotask_1_1_task.html", "classcotask_1_1_task" ],
       [ "TaskList", "classcotask_1_1_task_list.html", "classcotask_1_1_task_list" ]
     ] ],
-    [ "JointTask", null, [
-      [ "JointTask", "class_joint_task_1_1_joint_task.html", "class_joint_task_1_1_joint_task" ]
+    [ "jointTask", null, [
+      [ "JointTask", "classjoint_task_1_1_joint_task.html", "classjoint_task_1_1_joint_task" ]
     ] ],
-    [ "RoboBrain", null, [
-      [ "RoboBrain", "class_robo_brain_1_1_robo_brain.html", "class_robo_brain_1_1_robo_brain" ]
+    [ "roboBrain", null, [
+      [ "RoboBrain", "classrobo_brain_1_1_robo_brain.html", "classrobo_brain_1_1_robo_brain" ]
     ] ],
-    [ "RoboEncoderDriver", null, [
-      [ "RoboEncoderDriver", "class_robo_encoder_driver_1_1_robo_encoder_driver.html", "class_robo_encoder_driver_1_1_robo_encoder_driver" ]
+    [ "roboEncoderDriver", null, [
+      [ "RoboEncoderDriver", "classrobo_encoder_driver_1_1_robo_encoder_driver.html", "classrobo_encoder_driver_1_1_robo_encoder_driver" ]
     ] ],
-    [ "RoboMotorDriver", null, [
-      [ "RoboMotorDriver", "class_robo_motor_driver_1_1_robo_motor_driver.html", "class_robo_motor_driver_1_1_robo_motor_driver" ]
+    [ "roboMotorDriver", null, [
+      [ "RoboMotorDriver", "classrobo_motor_driver_1_1_robo_motor_driver.html", "classrobo_motor_driver_1_1_robo_motor_driver" ]
     ] ],
-    [ "RoboSolenoidDriver", null, [
-      [ "RoboSolenoidDriver", "class_robo_solenoid_driver_1_1_robo_solenoid_driver.html", "class_robo_solenoid_driver_1_1_robo_solenoid_driver" ]
+    [ "roboSolenoidDriver", null, [
+      [ "RoboSolenoidDriver", "classrobo_solenoid_driver_1_1_robo_solenoid_driver.html", "classrobo_solenoid_driver_1_1_robo_solenoid_driver" ]
     ] ],
-    [ "RoboTask", null, [
-      [ "RoboTask", "class_robo_task_1_1_robo_task.html", "class_robo_task_1_1_robo_task" ]
+    [ "roboTask", null, [
+      [ "RoboTask", "classrobo_task_1_1_robo_task.html", "classrobo_task_1_1_robo_task" ]
     ] ],
     [ "task_share", null, [
       [ "BaseShare", "classtask__share_1_1_base_share.html", "classtask__share_1_1_base_share" ],
       [ "Queue", "classtask__share_1_1_queue.html", "classtask__share_1_1_queue" ],
       [ "Share", "classtask__share_1_1_share.html", "classtask__share_1_1_share" ]
     ] ],
-    [ "TaskTouch", null, [
-      [ "TaskTouch", "class_task_touch_1_1_task_touch.html", "class_task_touch_1_1_task_touch" ]
+    [ "taskTouch", null, [
+      [ "TaskTouch", "classtask_touch_1_1_task_touch.html", "classtask_touch_1_1_task_touch" ]
     ] ],
-    [ "TouchDriver", null, [
-      [ "TouchDriver", "class_touch_driver_1_1_touch_driver.html", "class_touch_driver_1_1_touch_driver" ]
+    [ "touchDriver", null, [
+      [ "TouchDriver", "classtouch_driver_1_1_touch_driver.html", "classtouch_driver_1_1_touch_driver" ]
     ] ]
 ];
