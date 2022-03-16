@@ -1,42 +1,30 @@
 ## @file mainpage.py
-# @author Jonathan Cedarquist, Tim Jain, Philip Pang
+# @author Jonathan Cederquist, Tim Jain, Philip Pang
 # @mainpage Term Project
 # @section intro_sec Software Design
 # @subsection ss_FSM Finite State Machine
-# @image html 3R_FSM_Touch.drawio.png Finite State Diagram
-# The finite state machine first involves calibration. Before calibrating,
-# the RoboTask is initialized and also activates the solenoid, lifting up the
-# pen.
-# S1 state is the touch screen calibration. If a calibration file exists, then
-# the calibration procedure does not need to be performed. If not, the procedure
-# is done by touching the touch pad at set points and calculating angle and
-# scale biases that those that the touches might reveal.
+# @image html RobotFSM.png State Transition Diagram
+# The finite state machine is very simple. Although this design is not very
+# robust, it reflects the state of our code when the robot was tested.
+# The calibration for the touchpad and the encoders (finding a known angle)
+# occurs in the main.py file when each task is created. The constructor for
+# jointTask and taskTouch each runs the calibrate method when a task is created
+# which either reads from a file with given constants or asks for user input
+# to calibrate the device. After the calibration for the touch pad and 3 links
+# is complete, the task scheduler begins running. This finite state machine is
+# found in the run method of roboTask, the "brain" task which interfaces between
+# the touchpad user position and the inverse kinematics to provide angles for each
+# of the joint (motor, encoder, controller) tasks.
 # 
-# S2 state calibrates the motors. A message is shown in the console to prompt the
-# user to manually move the linkages of the robot, one arm at a time. The limit
-# switch will run over a ramp once in an arbitrary direction and back over a
-# second time in the opposite direction. The calibration code will read these
-# limit switch signals and will set the encoder values in the motor to their
-# respective correct values that were hand measured when building the robot.
-# Finally, all communication queues that contain touch tracking and position data
-# are cleared.
-# 
-# S3 state the drawing executes if the robot is ready and if contact
-# is made on the touch panel. In this state, the solenoid is deactivated and the
-# pen is lowered to commence drawing.
+# S0 is the initialization state where all shared variables are reset. After this has
+# been completed, the roboTask immediately transitions to S3 DRAWING, which runs the
+# normal drawing operation for the robot. In this state, the brain checks whether any
+# positions have been added to the x and y queues, then runs the inverse kinematics
+# and updates the joint angles accordingly. If there are no positions to move to, the
+# robot lifts the solenoid and waits until the queue is populated. The ready flag controls
+# the end of the robot motion. When the program is exited, the ready flag is flippped,
+# which stops the motors and solenoid.
 #
-# S4 When it touches the paper as the user is touching the touch pad, the drawing
-# sequence is performed, letting the pen down to draw and moving the links based
-# on the inverse kinematics of 
-# the robot task, and moving the motors at appropriate speeds based on closed 
-# loop control.
-# 
-# S5 When the user removes their finger from the touch pad, the 
-# solenoid pulls, raising the pen. States 1 and 2 are repeated until the 
-# program is halted.
-#
-# States S3, S4, and S5 are looped as the touch panel is touched and not touched.
-# 
 # @subsection ss_Task Task Diagram
 # We decided to combine the motor, encoder, and closed loop controller tasks
 # within one task for each motor system. This creates three tasks, in which the 

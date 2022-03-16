@@ -107,10 +107,10 @@ to be shut off when the robot is ready to be shut down.
 *Figure 2: Task Diagram for 3-RRR Planar Parallel Robot.*
 
 ### State Transition Diagram
-Information about FSM here - need to update to reflect actual operation
+The state transition diagram for our robot is shown below. The simple
+layout is explained in more detail on the doxygen mainpage.
 
-3R_FSM_Touch.drawio.png
-![3DOF Parallel Robot State Transition Diagram!](3R_FSM_Touch.drawio.png)
+![3DOF Parallel Robot State Transition Diagram!](RobotFSM.png)
 
 *Figure 3: State Transition Diagram for 3-RRR Planar Parallel Robot.*
 
