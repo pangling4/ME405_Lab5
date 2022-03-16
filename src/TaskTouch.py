@@ -37,6 +37,12 @@ class TaskTouch:
         self.TouchPanel.calibrate()
 
     def run(self):
+        '''!
+            @brief    Used by the task scheduler to run continuously while robot operates
+            @details  Constantly scans the touchpad for user input, transforms coordinates, and places in queues
+                      which the brain uses to compute inverse kinematics
+        '''
+        
         # @brief
         
         while True:

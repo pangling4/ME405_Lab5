@@ -76,8 +76,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad6b69caa49255ee55637a101d5385cdc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_task_touch_1_1_task_touch.html#ad6b69caa49255ee55637a101d5385cdc">__init__</a> (self, ready, touchpad_x, touchpad_y)</td></tr>
 <tr class="memdesc:ad6b69caa49255ee55637a101d5385cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns shared communication variables to be accessible locally and instantiates touch panel driver for touch panel interfacing.  <a href="class_task_touch_1_1_task_touch.html#ad6b69caa49255ee55637a101d5385cdc">More...</a><br /></td></tr>
 <tr class="separator:ad6b69caa49255ee55637a101d5385cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab55ebb686106b5bd68380feae77f173c"><td class="memItemLeft" align="right" valign="top"><a id="ab55ebb686106b5bd68380feae77f173c"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> (self)</td></tr>
+<tr class="memitem:ab55ebb686106b5bd68380feae77f173c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_task_touch_1_1_task_touch.html#ab55ebb686106b5bd68380feae77f173c">run</a> (self)</td></tr>
+<tr class="memdesc:ab55ebb686106b5bd68380feae77f173c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by the task scheduler to run continuously while robot operates.  <a href="class_task_touch_1_1_task_touch.html#ab55ebb686106b5bd68380feae77f173c">More...</a><br /></td></tr>
 <tr class="separator:ab55ebb686106b5bd68380feae77f173c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -145,6 +145,28 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab55ebb686106b5bd68380feae77f173c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab55ebb686106b5bd68380feae77f173c">&#9670;&nbsp;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def TaskTouch.TaskTouch.run </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used by the task scheduler to run continuously while robot operates. </p>
+<p>Constantly scans the touchpad for user input, transforms coordinates, and places in queues which the brain uses to compute inverse kinematics </p>
 
 </div>
 </div>
