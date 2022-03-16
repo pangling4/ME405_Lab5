@@ -62,7 +62,6 @@ $(document).ready(function(){initNavTree('class_task_touch_1_1_task_touch.html',
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_task_touch_1_1_task_touch-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TaskTouch.TaskTouch Class Reference</div>  </div>
@@ -91,12 +90,6 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a235c212105729530d4b9170de7f63ca7"><td class="memItemLeft" align="right" valign="top"><a id="a235c212105729530d4b9170de7f63ca7"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>TouchPanel</b></td></tr>
 <tr class="separator:a235c212105729530d4b9170de7f63ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:ade43060561fc37c7df69e51112401153"><td class="memItemLeft" align="right" valign="top"><a id="ade43060561fc37c7df69e51112401153"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><b>prev_state</b> = (0,0,0)</td></tr>
-<tr class="separator:ade43060561fc37c7df69e51112401153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">@brief       instantiates self object of Touch Panel tasks</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -137,8 +130,14 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>prev_state</b> = (0,
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@brief
-   @param
+<pre class="fragment">@brief Assigns shared communication variables to be accessible locally and instantiates
+        touch panel driver for touch panel interfacing.
+   @param ready        The task_share.Share corresponding to whether or not the touchpanel
+                       should be recording data because the robot is READY to draw
+   @param touchpad_x   The task_share.Queue corresponding to x_coordinate in inches on the
+                       coordinate system of the drawing area of the 3RRR robot
+   @param touchpad_y   The task_share.Queue corresponding to y_coordinate in inches on the
+                       coordinate system of the drawing area of the 3RRR robot
 </pre> 
 </div>
 </div>

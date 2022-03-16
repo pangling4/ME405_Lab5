@@ -31,7 +31,6 @@ var NAVTREE =
         [ "Task Diagram", "index.html#ss_Task", null ]
       ] ]
     ] ],
-    [ "Test Results", "page1.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
